@@ -1,4 +1,6 @@
-export const heroImage =
+export const heroImage = "/products/marble-trio.jpg";
+
+const livingRoomImage =
   "https://images.unsplash.com/photo-1791730096235-38816ac9fa0d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxzY3VscHR1cmFsJTIwY2VtZW50JTIwcG90cyUyMHBsYW50ZXIlMjBtb2Rlcm4lMjBsaXZpbmclMjByb29tJTIwZGF5bGlnaHR8ZW58MHx8fHwxNzkxOTEwMzA4fDA&ixlib=rb-4.1.0&q=85";
 
 export const pots = [
@@ -534,7 +536,7 @@ export const rooms = [
   {
     id: "living",
     label: "Living Room",
-    url: heroImage,
+    url: livingRoomImage,
     headline: "The Grounded Living Room",
     copy: "Anchor your seating with a tall Monolith planter and layer low bowls across the console for quiet rhythm.",
   },

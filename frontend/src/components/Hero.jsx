@@ -122,7 +122,7 @@ export const Hero = () => {
           >
             <motion.img
               src={heroImage}
-              alt="Sculptural cement pots and designer vases styled in a warm modern living room"
+              alt="Sorrento marble and gold designer vases styled with roses and pampas grass"
               style={{ y: imgY }}
               className="h-[112%] w-full scale-105 object-cover"
               data-testid="hero-image"
