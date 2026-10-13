@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    background-color: #FBF8F5;
+    color: #1C1917;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: #C85A32;
+    color: #FBF8F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #F3EDE6;
+}
+::-webkit-scrollbar-thumb {
+    background: #C9BCA9;
+    border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #C85A32;
+}
+
+@layer base {
+    :root {
+        --background: 30 33% 97%;
+        --foreground: 20 6% 9%;
+        --card: 0 0% 100%;
+        --card-foreground: 20 6% 9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 20 6% 9%;
+        --primary: 17 60% 49%;
+        --primary-foreground: 30 33% 97%;
+        --secondary: 33 30% 93%;
+        --secondary-foreground: 20 6% 9%;
+        --muted: 33 30% 93%;
+        --muted-foreground: 25 5% 32%;
+        --accent: 33 30% 93%;
+        --accent-foreground: 20 6% 9%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 30 12% 88%;
+        --input: 30 12% 85%;
+        --ring: 17 60% 49%;
+        --radius: 0.75rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Film grain overlay */
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+}
+
+/* Slow editorial marquee */
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+.marquee-track {
+    animation: marquee-scroll 46s linear infinite;
+}
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}
+
+/* Arch-clipped editorial frames */
+.arch-frame {
+    border-radius: 999px 999px 24px 24px;
+}
+
+/* Lenis recommended styles */
+html.lenis, html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
