@@ -25,20 +25,13 @@ export const Logo = ({ dark = false }) => (
   <a
     href="#top"
     data-testid="brand-logo-link"
-    className={`flex items-center gap-2.5 ${dark ? "text-sand" : "text-ink"}`}
+    className="flex items-center"
+    aria-label="Avora Homes — back to top"
   >
-    <LogoMark />
-    <span className="leading-none">
-      <span className="block font-serif text-xl font-semibold tracking-tight">
-        Avora Homes
-      </span>
-      <span
-        className={`block text-[10px] uppercase tracking-[0.28em] ${
-          dark ? "text-sand/60" : "text-stone-500"
-        }`}
-      >
-        Pots · Vases · Living
-      </span>
-    </span>
+    <img
+      src="/logo.png"
+      alt="Avora Homes — Curated Pots & Vases to Elevate Your Space"
+      className={`h-12 w-auto rounded-xl ${dark ? "shadow-lg" : "shadow-sm"}`}
+    />
   </a>
 );
