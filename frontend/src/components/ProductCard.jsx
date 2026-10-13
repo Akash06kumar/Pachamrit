@@ -29,7 +29,7 @@ const swatch = (color) => {
   return "#b8ad9c";
 };
 
-const QuickView = ({ product, open, onClose }) => {
+export const QuickView = ({ product, open, onClose }) => {
   const [qty, setQty] = useState(1);
   const [imgIdx, setImgIdx] = useState(0);
   const close = () => {
@@ -198,8 +198,10 @@ const QuickView = ({ product, open, onClose }) => {
   );
 };
 
-export const ProductCard = ({ product, index = 0 }) => {
+export const ProductCard = ({ product, index = 0, onQuickView }) => {
   const [open, setOpen] = useState(false);
+  const openQuickView = () =>
+    onQuickView ? onQuickView(product) : setOpen(true);
   return (
     <motion.article
       initial={{ opacity: 0, y: 36 }}
@@ -233,7 +235,7 @@ export const ProductCard = ({ product, index = 0 }) => {
         )}
         <button
           type="button"
-          onClick={() => setOpen(true)}
+          onClick={openQuickView}
           data-testid={`${product.id}-quick-view-btn`}
           className="absolute bottom-4 left-1/2 flex -translate-x-1/2 translate-y-3 items-center gap-2 rounded-full bg-sand/95 px-5 py-2.5 text-xs font-semibold text-ink opacity-0 shadow-lg backdrop-blur transition-all duration-300 hover:bg-ink hover:text-sand group-hover:translate-y-0 group-hover:opacity-100"
         >
@@ -284,7 +286,9 @@ export const ProductCard = ({ product, index = 0 }) => {
           </a>
         </div>
       </div>
-      <QuickView product={product} open={open} onClose={() => setOpen(false)} />
+      {!onQuickView && (
+        <QuickView product={product} open={open} onClose={() => setOpen(false)} />
+      )}
     </motion.article>
   );
 };

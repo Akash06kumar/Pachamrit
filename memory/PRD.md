@@ -29,6 +29,8 @@ Build a premium landing page / storefront for **Avora Homes**, an Indian home-de
 - The owner's 5 real product photos are live (hosted at /products/*.jpg): Sorrento Marble-Gold Trio, Gilded Vine Tall Vase, Cuzco Tribal Art Vase, Jaipur Blooms Handpainted Vase, Folk Flora Handpainted Planter; Marble Trio + Gilded Vine lead the Featured edit
 - Collection filters on Pots and Vases sections: price buckets, size (Tabletop/Medium/Floor), material (Cement/Ceramic/Terracotta/Marble), colour family — with result counts, reset and empty state
 - Private admin page at /admin (JWT auth, httpOnly cookie, bcrypt hash, seeded admin, brute-force lockout): login → enquiry inbox with name/phone/city/interest/message/date, refresh, logout; direct WhatsApp link per enquiry phone
+- Enquiry status workflow: every enquiry carries New / Read / Replied; admin can mark read or replied (PATCH /api/admin/enquiries/{id}/status), filter tabs with live counts (All/New/Read/Replied), replied state persists
+- Product search: navbar magnifier opens a full-screen search dialog matching all 31 products by name, material, finish and colour; results are full product cards (order/ask/quick-view all work; quick view opens standalone after the search dialog closes to avoid nested-dialog issues)
 - Quick-view modal with quantity stepper feeding the prefilled WhatsApp order message
 - Featured "Cement Edit" spotlight, Styling Ideas, Shop-by-Room tabs, Our Story, Reviews, FAQ accordion, enquiry form, footer, floating WhatsApp button
 - Verified: auth chain via curl (401 unauth, login, /me, protected list); UI via Playwright (filters, gallery, admin login/logout, enquiry dashboard)
@@ -46,6 +48,6 @@ Build a premium landing page / storefront for **Avora Homes**, an Indian home-de
 
 ## Next Tasks
 1. Replace remaining stock imagery with real photos as they're shot
-2. Add read/replied status to admin enquiry inbox
+2. Add delete/spam control to the admin enquiry inbox
 3. Run SEO setup skill before go-live
 4. Add more real SKUs as the catalogue grows

@@ -1,6 +1,14 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import { Loader2, LogOut, RefreshCw, Inbox, Lock } from "lucide-react";
+import {
+  Loader2,
+  LogOut,
+  RefreshCw,
+  Inbox,
+  Lock,
+  MailOpen,
+  CheckCheck,
+} from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Input } from "@/components/ui/input";
 
@@ -28,6 +36,31 @@ const formatDate = (iso) =>
     hour12: true,
   });
 
+const STATUS_META = {
+  new: { label: "New", classes: "border-terra/40 bg-terra/10 text-terra" },
+  read: { label: "Read", classes: "border-stone-300 bg-stone-100 text-stone-600" },
+  replied: { label: "Replied", classes: "border-olive/40 bg-olive/10 text-olive" },
+};
+
+const StatusBadge = ({ status, testid }) => {
+  const meta = STATUS_META[status] || STATUS_META.new;
+  return (
+    <span
+      data-testid={testid}
+      className={`rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] ${meta.classes}`}
+    >
+      {meta.label}
+    </span>
+  );
+};
+
+const FILTER_TABS = [
+  { id: "all", label: "All" },
+  { id: "new", label: "New" },
+  { id: "read", label: "Read" },
+  { id: "replied", label: "Replied" },
+];
+
 export default function AdminPage() {
   const [user, setUser] = useState(null); // null = checking, false = logged out
   const [email, setEmail] = useState("");
@@ -36,6 +69,7 @@ export default function AdminPage() {
   const [busy, setBusy] = useState(false);
   const [enquiries, setEnquiries] = useState([]);
   const [loadingList, setLoadingList] = useState(false);
+  const [statusFilter, setStatusFilter] = useState("all");
 
   const loadEnquiries = useCallback(async () => {
     setLoadingList(true);
@@ -79,6 +113,35 @@ export default function AdminPage() {
     setUser(false);
     setEnquiries([]);
   };
+
+  const patchStatus = async (id, status) => {
+    try {
+      const { data } = await axios.patch(
+        `${API}/admin/enquiries/${id}/status`,
+        { status }
+      );
+      setEnquiries((list) => list.map((e) => (e.id === id ? data : e)));
+    } catch (e) {
+      if (e.response?.status === 401) setUser(false);
+    }
+  };
+
+  const counts = useMemo(() => {
+    const c = { all: enquiries.length, new: 0, read: 0, replied: 0 };
+    enquiries.forEach((e) => {
+      const s = e.status || "new";
+      if (c[s] !== undefined) c[s] += 1;
+    });
+    return c;
+  }, [enquiries]);
+
+  const visible = useMemo(
+    () =>
+      statusFilter === "all"
+        ? enquiries
+        : enquiries.filter((e) => (e.status || "new") === statusFilter),
+    [enquiries, statusFilter]
+  );
 
   return (
     <div className="min-h-screen bg-sand font-sans text-ink antialiased">
@@ -191,24 +254,46 @@ export default function AdminPage() {
               </button>
             </div>
 
+            <div className="mt-7 flex flex-wrap gap-2" data-testid="admin-status-filters">
+              {FILTER_TABS.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setStatusFilter(tab.id)}
+                  data-testid={`admin-filter-${tab.id}`}
+                  className={`rounded-full px-4 py-2 text-xs font-semibold transition-colors duration-300 ${
+                    statusFilter === tab.id
+                      ? "bg-ink text-sand"
+                      : "border border-stone-300 bg-white/60 text-stone-600 hover:border-terra hover:text-terra"
+                  }`}
+                >
+                  {tab.label} ({counts[tab.id]})
+                </button>
+              ))}
+            </div>
+
             {loadingList && enquiries.length === 0 ? (
               <div className="flex justify-center py-24">
                 <Loader2 className="h-6 w-6 animate-spin text-terra" />
               </div>
-            ) : enquiries.length === 0 ? (
+            ) : visible.length === 0 ? (
               <div
-                className="mt-10 rounded-[22px] border border-dashed border-stone-300 bg-white/40 py-20 text-center"
+                className="mt-8 rounded-[22px] border border-dashed border-stone-300 bg-white/40 py-20 text-center"
                 data-testid="admin-empty-state"
               >
                 <Inbox className="mx-auto h-8 w-8 text-stone-400" />
-                <p className="mt-4 font-serif text-2xl text-ink">No enquiries yet.</p>
+                <p className="mt-4 font-serif text-2xl text-ink">
+                  {statusFilter === "all"
+                    ? "No enquiries yet."
+                    : `No ${STATUS_META[statusFilter]?.label.toLowerCase()} enquiries.`}
+                </p>
                 <p className="mt-2 text-sm text-stone-500">
                   New submissions from the website form will appear here.
                 </p>
               </div>
             ) : (
-              <div className="mt-8 space-y-4" data-testid="admin-enquiry-list">
-                {enquiries.map((enq) => (
+              <div className="mt-6 space-y-4" data-testid="admin-enquiry-list">
+                {visible.map((enq) => (
                   <article
                     key={enq.id}
                     data-testid={`admin-enquiry-${enq.id}`}
@@ -223,9 +308,15 @@ export default function AdminPage() {
                           {formatDate(enq.created_at)}
                         </p>
                       </div>
-                      <span className="rounded-full bg-cream px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-clay">
-                        {enq.product_interest}
-                      </span>
+                      <div className="flex items-center gap-2.5">
+                        <StatusBadge
+                          status={enq.status || "new"}
+                          testid={`admin-enquiry-${enq.id}-status`}
+                        />
+                        <span className="rounded-full bg-cream px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-clay">
+                          {enq.product_interest}
+                        </span>
+                      </div>
                     </div>
                     <div className="mt-4 grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
                       <p className="text-stone-600">
@@ -249,6 +340,36 @@ export default function AdminPage() {
                         {enq.message}
                       </p>
                     )}
+                    <div className="mt-4 flex flex-wrap gap-2.5 border-t border-stone-100 pt-4">
+                      {(enq.status || "new") === "new" && (
+                        <button
+                          type="button"
+                          onClick={() => patchStatus(enq.id, "read")}
+                          data-testid={`admin-enquiry-${enq.id}-mark-read-btn`}
+                          className="inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-4 py-2 text-xs font-semibold text-ink transition-colors hover:border-terra hover:text-terra"
+                        >
+                          <MailOpen className="h-3.5 w-3.5" />
+                          Mark as Read
+                        </button>
+                      )}
+                      {(enq.status || "new") !== "replied" && (
+                        <button
+                          type="button"
+                          onClick={() => patchStatus(enq.id, "replied")}
+                          data-testid={`admin-enquiry-${enq.id}-mark-replied-btn`}
+                          className="inline-flex items-center gap-1.5 rounded-full bg-olive px-4 py-2 text-xs font-semibold text-sand transition-colors hover:bg-ink"
+                        >
+                          <CheckCheck className="h-3.5 w-3.5" />
+                          Mark as Replied
+                        </button>
+                      )}
+                      {(enq.status || "new") === "replied" && (
+                        <p className="inline-flex items-center gap-1.5 text-xs font-medium text-olive">
+                          <CheckCheck className="h-3.5 w-3.5" />
+                          You’ve replied to this enquiry
+                        </p>
+                      )}
+                    </div>
                   </article>
                 ))}
               </div>

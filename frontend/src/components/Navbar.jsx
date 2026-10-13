@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, Search } from "lucide-react";
 import { Logo } from "./Logo";
+import { SearchDialog } from "./SearchDialog";
 import { waGeneralLink } from "@/lib/whatsapp";
 
 const links = [
@@ -16,6 +17,7 @@ const links = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -52,6 +54,15 @@ export const Navbar = () => {
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => setSearchOpen(true)}
+            data-testid="nav-search-btn"
+            aria-label="Search products"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink/20 bg-sand/60 text-ink transition-colors duration-300 hover:border-terra hover:text-terra"
+          >
+            <Search className="h-4 w-4" />
+          </button>
           <a
             href={waGeneralLink()}
             target="_blank"
@@ -109,6 +120,7 @@ export const Navbar = () => {
           </motion.nav>
         )}
       </AnimatePresence>
+      <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 };

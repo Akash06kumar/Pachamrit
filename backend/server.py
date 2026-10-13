@@ -87,6 +87,7 @@ class Enquiry(BaseModel):
     city: str = ""
     product_interest: str = "General Enquiry"
     message: str = ""
+    status: str = "new"
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
@@ -170,6 +171,27 @@ async def admin_list_enquiries(user: dict = Depends(get_current_user)):
         if isinstance(item.get('created_at'), str):
             item['created_at'] = datetime.fromisoformat(item['created_at'])
     return enquiries
+
+
+class StatusUpdate(BaseModel):
+    status: str
+
+
+@api_router.patch("/admin/enquiries/{enquiry_id}/status", response_model=Enquiry)
+async def admin_update_enquiry_status(
+    enquiry_id: str, input: StatusUpdate, user: dict = Depends(get_current_user)
+):
+    if input.status not in ("new", "read", "replied"):
+        raise HTTPException(status_code=400, detail="Invalid status")
+    result = await db.enquiries.update_one(
+        {"id": enquiry_id}, {"$set": {"status": input.status}}
+    )
+    if result.matched_count == 0:
+        raise HTTPException(status_code=404, detail="Enquiry not found")
+    doc = await db.enquiries.find_one({"id": enquiry_id}, {"_id": 0})
+    if isinstance(doc.get('created_at'), str):
+        doc['created_at'] = datetime.fromisoformat(doc['created_at'])
+    return Enquiry(**doc)
 
 
 app.include_router(api_router)
