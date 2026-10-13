@@ -140,7 +140,7 @@ export const Hero = () => {
             data-testid="hero-featured-card"
           >
             <img
-              src={pots[0].url}
+              src={pots[0].images[0]}
               alt={pots[0].name}
               className="h-14 w-14 rounded-xl object-cover"
               loading="lazy"

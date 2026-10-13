@@ -103,7 +103,12 @@ export const Footer = () => (
       </div>
       <div className="flex flex-col items-center justify-between gap-3 pt-8 text-xs text-sand/45 sm:flex-row">
         <p>© {new Date().getFullYear()} Avora Homes. Handcrafted with care in India.</p>
-        <p>Prices in INR · Shipping & payment confirmed on WhatsApp</p>
+        <p className="flex items-center gap-4">
+          <span>Prices in INR · Shipping & payment confirmed on WhatsApp</span>
+          <a href="/admin" data-testid="footer-admin-link" className="transition-colors hover:text-terra">
+            Admin
+          </a>
+        </p>
       </div>
     </div>
   </footer>

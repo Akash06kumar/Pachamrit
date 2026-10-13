@@ -41,7 +41,7 @@ export const Featured = () => (
           >
             <div className="aspect-[3/4] overflow-hidden">
               <img
-                src={p.url}
+                src={p.images[0]}
                 alt={p.name}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.07]"

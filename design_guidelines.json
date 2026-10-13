@@ -1,288 +1,142 @@
 {
   "brand_identity": {
     "name": "Avora Homes",
-    "tagline": "Avora Homes — Sculptural Pots. Beautiful Vases. Thoughtful Living.",
-    "archetype": "ARCHETYPE 1: ORGANIC & EARTHY (Trust, Growth, Calm) with Tactile Modernity",
-    "target_audience": "Design-conscious Indian homeowners, interior designers, urban plant enthusiasts, and aesthetic home curators seeking high-end handcrafted cement planters, designer vases, and wall art.",
-    "emotional_tone": "Calming, tactile, architectural, warm, grounded, and thoughtfully editorial.",
-    "whatsapp_number": "+91 7061712908",
-    "currency_symbol": "₹"
-  },
-  "typography": {
-    "font_family_heading": "'Cormorant Garamond', 'Playfair Display', serif",
-    "font_family_body": "'Plus Jakarta Sans', 'Manrope', sans-serif",
-    "font_family_mono": "'JetBrains Mono', monospace",
-    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap",
-    "scale": {
-      "h1": "text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.1]",
-      "h2": "text-2xl sm:text-3xl lg:text-4xl font-serif tracking-tight leading-snug",
-      "h3": "text-xl sm:text-2xl font-serif leading-snug",
-      "h4": "text-lg sm:text-xl font-medium tracking-normal",
-      "body": "text-base leading-relaxed font-sans text-stone-700",
-      "body_sm": "text-sm leading-normal font-sans text-stone-600",
-      "caption": "text-xs uppercase tracking-[0.2em] font-sans font-semibold text-stone-500"
+    "positioning": "Premium Indian home-decor brand specializing in sculptural cement pots, planters, and designer vases",
+    "aesthetic": "Warm sand / terracotta editorial styling",
+    "typography": {
+      "heading": "Cormorant Garamond, serif",
+      "body": "Plus Jakarta Sans, sans-serif"
+    },
+    "color_palette": {
+      "sand_light": "#F7F4EF",
+      "sand_base": "#EAE3D9",
+      "terracotta": "#C86D51",
+      "earth_dark": "#2C2623",
+      "clay_muted": "#B59A88"
     }
   },
-  "colors": {
-    "background_primary": "#FBF8F5",
-    "background_secondary": "#F3EDE6",
-    "background_accent": "#E8DFC5",
-    "surface_card": "#FFFFFF",
-    "surface_glass": "rgba(251, 248, 245, 0.85)",
-    "text_main": "#1C1917",
-    "text_muted": "#57534E",
-    "text_light": "#78716C",
-    "border_subtle": "#E7E5E4",
-    "border_warm": "#D6CECE",
-    "brand_terracotta": "#C85A32",
-    "brand_clay": "#A34828",
-    "brand_cement_grey": "#8C857B",
-    "brand_sage": "#7A8471",
-    "brand_olive": "#4A5240",
-    "whatsapp_green": "#25D366",
-    "whatsapp_hover": "#1EBE57"
-  },
-  "logo_and_icons": {
-    "svg_logo_mark": "<svg width='36' height='36' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M20 4L34 32H6L20 4Z' stroke='#1C1917' stroke-width='2.5' stroke-linejoin='round'/><path d='M14 20C14 23.3137 16.6863 26 20 26C23.3137 26 26 23.3137 26 20' stroke='#C85A32' stroke-width='2.5' stroke-linecap='round'/></svg>",
-    "icon_library": "lucide-react (already installed)",
-    "rules": "Never use AI emojis. Use clean minimalist Lucide icons (e.g., ShoppingBag, MessageSquare, ArrowRight, ShieldCheck, Truck, Sparkles, Filter, Eye, X, Check, Star)."
-  },
-  "image_urls": {
-    "hero_banner": "https://images.unsplash.com/photo-1791730096235-38816ac9fa0d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxzY3VscHR1cmFsJTIwY2VtZW50JTIwcG90cyUyMHBsYW50ZXIlMjBtb2Rlcm4lMjBsaXZpbmclMjByb29tJTIwZGF5bGlnaHR8ZW58MHx8fHwxNzkxOTEwMzA4fDA&ixlib=rb-4.1.0&q=85",
+  "catalogue_expansion": {
     "pots_and_planters": [
       {
-        "id": "pot-1",
-        "name": "Komorebi Fluted Cement Planter",
-        "price": 2490,
-        "category": "Pots & Planters",
-        "priority": 1,
-        "url": "https://images.unsplash.com/photo-1761330439316-72229b71798f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxzY3VscHR1cmFsJTIwY2VtZW50JTIwcG90cyUyMHBsYW50ZXIlMjBtb2Rlcm4lMjBsaXZpbmclMjByb29tJTIwZGF5bGlnaHR8ZW58MHx8fHwxNzkxOTEwMzA4fDA&ixlib=rb-4.1.0&q=85",
-        "dimensions": "D: 12\" x H: 14\"",
-        "finish": "Raw Textured Sandstone Cement",
-        "availability": "In Stock (Ships in 48 hrs)",
-        "colors": ["Warm Sand", "Obsidian Cement", "Terracotta Blush"]
+        "id": "pot-01",
+        "suggested_name": "Kavya Ribbed Cement Pot",
+        "main_url": "https://images.unsplash.com/photo-1766392533421-df119fdedafe?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHwzfHxyaWJiZWQlMjBjZXJhbWljJTIwcGxhbnRlcnxlbnwwfHx8fDE3OTE5MTQ5ODN8MA&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1713810958161-48f64ca4c5d6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHw0fHxyaWJiZWQlMjBjZXJhbWljJTIwcGxhbnRlcnxlbnwwfHx8fDE3OTE5MTQ5ODN8MA&ixlib=rb-4.1.0&q=85",
+          "https://images.unsplash.com/photo-1701270631258-ca1a2edbd9c5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHwxfHxyaWJiZWQlMjBjZXJhbWljJTIwcGxhbnRlcnxlbnwwfHx8fDE3OTE5MTQ5ODN8MA&ixlib=rb-4.1.0&q=85"
+        ]
       },
       {
-        "id": "pot-2",
-        "name": "Arco Concrete Pedestal Pot",
-        "price": 3150,
-        "category": "Pots & Planters",
-        "priority": 1,
-        "url": "https://images.unsplash.com/photo-1786564026108-79d7e8c26de8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHw0fHxzY3VscHR1cmFsJTIwY2VtZW50JTIwcG90cyUyMHBsYW50ZXIlMjBtb2Rlcm4lMjBsaXZpbmclMjByb29tJTIwZGF5bGlnaHR8ZW58MHx8fHwxNzkxOTEwMzA4fDA&ixlib=rb-4.1.0&q=85",
-        "dimensions": "D: 10\" x H: 16\"",
-        "finish": "Limewash Hand-Burnished Cement",
-        "availability": "In Stock",
-        "colors": ["Chalk White", "Charcoal Slate"]
+        "id": "pot-02",
+        "suggested_name": "Aanya Hanging Cement Planter",
+        "main_url": "https://images.unsplash.com/photo-1600411832986-5a4477b64a1c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwzfHxoYW5naW5nJTIwcGxhbnRlciUyMGluZG9vcnxlbnwwfHx8fDE3OTE5MTQ5Nzd8MA&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwxfHxoYW5naW5nJTIwcGxhbnRlciUyMGluZG9vcnxlbnwwfHx8fDE3OTE5MTQ5Nzd8MA&ixlib=rb-4.1.0&q=85",
+          "https://images.unsplash.com/photo-1655292913586-515ff5ab9505?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwyfHxoYW5naW5nJTIwcGxhbnRlciUyMGluZG9vcnxlbnwwfHx8fDE3OTE5MTQ5Nzd8MA&ixlib=rb-4.1.0&q=85"
+        ]
       },
       {
-        "id": "pot-3",
-        "name": "Terra Sphere Low Bowl Planter",
-        "price": 1890,
-        "category": "Pots & Planters",
-        "priority": 1,
-        "url": "https://images.unsplash.com/photo-1618483474128-991a146dc60b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHwxfHxiYWxjb255JTIwaW5kb29yJTIwcGxhbnRzJTIwc3VubGlnaHR8ZW58MHx8fHwxNzgyMzgzMzgyfDA&ixlib=rb-4.1.0&q=85",
-        "dimensions": "D: 16\" x H: 8\"",
-        "finish": "Stippled Organic Clay & Cement Blend",
-        "availability": "Only 4 Left",
-        "colors": ["Earthy Terracotta", "Raw Olive"]
+        "id": "pot-03",
+        "suggested_name": "Clayton Small Tabletop Pot Set",
+        "main_url": "https://images.unsplash.com/photo-1463320898484-cdee8141c787?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85"
+        ]
       },
       {
-        "id": "pot-4",
-        "name": "Monolith Tall Floor Planter",
-        "price": 4200,
-        "category": "Pots & Planters",
-        "priority": 1,
-        "url": "https://images.unsplash.com/photo-1708223578831-5c737a3074ab?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHwzfHxiYWxjb255JTIwaW5kb29yJTIwcGxhbnRzJTIwc3VubGlnaHR8ZW58MHx8fHwxNzgyMzgzMzgyfDA&ixlib=rb-4.1.0&q=85",
-        "dimensions": "D: 14\" x H: 24\"",
-        "finish": "Architectural Grey Reinforced Concrete",
-        "availability": "In Stock",
-        "colors": ["Natural Grey", "Washed Clay"]
+        "id": "pot-04",
+        "suggested_name": "Veda Wide Bowl Planter",
+        "main_url": "https://images.unsplash.com/photo-1559810087-893a00a35608?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwzfHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1619578977011-25e9ba052e32?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw0fHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85"
+        ]
+      },
+      {
+        "id": "pot-05",
+        "suggested_name": "TARA Cylindrical Floor Planter",
+        "main_url": "https://images.unsplash.com/photo-1786357906244-2e0309fbe0ab?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxjb25jcmV0ZSUyMGdlb21ldHJpYyUyMHBsYW50ZXJ8ZW58MHx8fHwxNzkxOTE0OTg3fDA&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1784653549138-ce6f99ac4a6c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHx0YWxsJTIwZmxvb3IlMjB2YXNlJTIwbWluaW1hbHxlbnwwfHx8fDE3OTE5MTQ5ODJ8MA&ixlib=rb-4.1.0&q=85"
+        ]
+      },
+      {
+        "id": "pot-06",
+        "suggested_name": "Riya Geometric Faceted Pot",
+        "main_url": "https://images.unsplash.com/photo-1619578977011-25e9ba052e32?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw0fHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1463320898484-cdee8141c787?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85"
+        ]
       }
     ],
     "vases": [
       {
-        "id": "vase-1",
-        "name": "Kintsugi Dual Silhouette Ceramic Vase",
-        "price": 2850,
-        "category": "Vases",
-        "priority": 2,
-        "url": "https://images.unsplash.com/photo-1791474582148-bb1101815ad0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwzfHxjZXJhbWljJTIwZGVjb3JhdGl2ZSUyMHZhc2VzJTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzkxOTEwMzA3fDA&ixlib=rb-4.1.0&q=85",
-        "dimensions": "W: 7\" x H: 13\"",
-        "finish": "Matte Glazed Ribbed Ceramic",
-        "availability": "In Stock",
-        "colors": ["Soft Ivory", "Ochre Terracotta"]
+        "id": "vase-01",
+        "suggested_name": "Soma Minimal Bud Vase Set",
+        "main_url": "https://images.unsplash.com/photo-1677761640321-b80251be00ca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwYnVkJTIwdmFzZXxlbnwwfHx8fDE3OTE5MTQ5Nzh8MA&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1687191883721-257d8cad5b54?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxjZXJhbWljJTIwYnVkJTIwdmFzZXxlbnwwfHx8fDE3OTE5MTQ5Nzh8MA&ixlib=rb-4.1.0&q=85",
+          "https://images.unsplash.com/photo-1643569556871-91ec60671ed7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwyfHxjZXJhbWljJTIwYnVkJTIwdmFzZXxlbnwwfHx8fDE3OTE5MTQ5Nzh8MA&ixlib=rb-4.1.0&q=85"
+        ]
       },
       {
-        "id": "vase-2",
-        "name": "Solitude Ribbed Earth Vessel",
-        "price": 2200,
-        "category": "Vases",
-        "priority": 2,
-        "url": "https://images.unsplash.com/photo-1758789898279-82f8cc279444?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHw0fHxjZXJhbWljJTIwZGVjb3JhdGl2ZSUyMHZhc2VzJTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzkxOTEwMzA3fDA&ixlib=rb-4.1.0&q=85",
-        "dimensions": "D: 8\" x H: 11\"",
-        "finish": "Hand-turned Studio Pottery Finish",
-        "availability": "In Stock",
-        "colors": ["Mist Blue", "Fog Grey"]
+        "id": "vase-02",
+        "suggested_name": "Mira Tall Sculptural Floor Vase",
+        "main_url": "https://images.unsplash.com/photo-1772442364571-c340bcc2efc0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHx0YWxsJTIwZmxvb3IlMjB2YXNlJTIwbWluaW1hbHxlbnwwfHx8fDE3OTE5MTQ5ODJ8MA&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1772442364499-52f96e8fc4d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHx0YWxsJTIwZmxvb3IlMjB2YXNlJTIwbWluaW1hbHxlbnwwfHx8fDE3OTE5MTQ5ODJ8MA&ixlib=rb-4.1.0&q=85"
+        ]
       },
       {
-        "id": "vase-3",
-        "name": "Elysian Minimalist Dark Amphora",
-        "price": 3400,
-        "category": "Vases",
-        "priority": 2,
-        "url": "https://images.unsplash.com/photo-1789916978489-79af03f06298?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHxjZXJhbWljJTIwZGVjb3JhdGl2ZSUyMHZhc2VzJTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzkxOTEwMzA3fDA&ixlib=rb-4.1.0&q=85",
-        "dimensions": "D: 9\" x H: 15\"",
-        "finish": "Satin Obsidian Ceramic",
-        "availability": "Limited Stock",
-        "colors": ["Matte Black", "Cream White"]
+        "id": "vase-03",
+        "suggested_name": "Kira Textured Statement Vase",
+        "main_url": "https://images.unsplash.com/photo-1613424777445-f93a2a48e285?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHwxfHx0ZXJyYWNvdHRhJTIwdmFzZSUyMGRlY29yfGVufDB8fHx8MTc5MTkxNDk3N3ww&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1631125915510-8ffed5a0d054?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHw0fHx0ZXJyYWNvdHRhJTIwdmFzZSUyMGRlY29yfGVufDB8fHx8MTc5MTkxNDk3N3ww&ixlib=rb-4.1.0&q=85"
+        ]
       },
       {
-        "id": "vase-4",
-        "name": "Aura Sculptural Niche Vessel",
-        "price": 1950,
-        "category": "Vases",
-        "priority": 2,
-        "url": "https://images.unsplash.com/photo-1778843851967-748b60ea4ae7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwZGVjb3JhdGl2ZSUyMHZhc2VzJTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzkxOTEwMzA3fDA&ixlib=rb-4.1.0&q=85",
-        "dimensions": "W: 6\" x H: 10\"",
-        "finish": "Raw Terracotta & Stone Glaze",
-        "availability": "In Stock",
-        "colors": ["Raw Ochre", "Warm Bone"]
-      }
-    ],
-    "wall_art": [
-      {
-        "id": "art-1",
-        "name": "Minimalist Tonal Wash Canvas Trio",
-        "price": 4900,
-        "category": "Wall Art & Paintings",
-        "priority": 3,
-        "url": "https://images.unsplash.com/photo-1758192178254-f4e4dbc1d754?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHx0ZXh0dXJlZCUyMHdhbGwlMjBhcnQlMjBjYW52YXMlMjBtaW5pbWFsaXN0fGVufDB8fHx8MTc5MTE0NjM0M3ww&ixlib=rb-4.1.0&q=85",
-        "dimensions": "Set of 3 (24\" x 36\" each)",
-        "finish": "Hand-painted Acrylic on Heavyweight Canvas",
-        "availability": "Made to Order (7 Days)",
-        "colors": ["Indigo Mist", "Neutral Clay"]
+        "id": "vase-04",
+        "suggested_name": "Earthy Fluted Terracotta Vase",
+        "main_url": "https://images.unsplash.com/photo-1674390521253-79caf82d0ceb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHwyfHx0ZXJyYWNvdHRhJTIwdmFzZSUyMGRlY29yfGVufDB8fHx8MTc5MTkxNDk3N3ww&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1613424777445-f93a2a48e285?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHwxfHx0ZXJyYWNvdHRhJTIwdmFzZSUyMGRlY29yfGVufDB8fHx8MTc5MTkxNDk3N3ww&ixlib=rb-4.1.0&q=85"
+        ]
       },
       {
-        "id": "art-2",
-        "name": "Diptych Organic Arch Diptych Framed Art",
-        "price": 6200,
-        "category": "Wall Art & Paintings",
-        "priority": 3,
-        "url": "https://images.unsplash.com/photo-1767614373251-94259ec635f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwzfHx0ZXh0dXJlZCUyMHdhbGwlMjBhcnQlMjBjYW52YXMlMjBtaW5pbWFsaXN0fGVufDB8fHx8MTc5MTE0NjM0M3ww&ixlib=rb-4.1.0&q=85",
-        "dimensions": "Set of 2 (30\" x 40\" each)",
-        "finish": "Textured Plaster & Gold Foil Accent Frame",
-        "availability": "In Stock",
-        "colors": ["Warm Taupe & Gold", "Obsidian & Brass"]
+        "id": "vase-05",
+        "suggested_name": "Nila Ribbed Ceramic Vase",
+        "main_url": "https://images.unsplash.com/photo-1713810958161-48f64ca4c5d6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHw0fHxyaWJiZWQlMjBjZXJhbWljJTIwcGxhbnRlcnxlbnwwfHx8fDE3OTE5MTQ5ODN8MA&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1611909023032-2d6b3134ecba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHwyfHxyaWJiZWQlMjBjZXJhbWljJTIwcGxhbnRlcnxlbnwwfHx8fDE3OTE5MTQ5ODN8MA&ixlib=rb-4.1.0&q=85"
+        ]
+      },
+      {
+        "id": "vase-06",
+        "suggested_name": "Devi Minimal Bottle Vase",
+        "main_url": "https://images.unsplash.com/photo-1633000116322-d7f5cb7d3ebb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwYm90dGxlJTIwdmFzZXxlbnwwfHx8fDE3OTE5MTQ5ODd8MA&ixlib=rb-4.1.0&q=85",
+        "alternate_urls": [
+          "https://images.unsplash.com/photo-1618674622469-d7fd1a22fcf8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwYm90dGxlJTIwdmFzZXxlbnwwfHx8fDE3OTE5MTQ5ODd8MA&ixlib=rb-4.1.0&q=85"
+        ]
       }
     ],
     "decor_objects": [
       {
-        "id": "decor-1",
-        "name": "Zenith Brass & Stone Pillar Bowl",
-        "price": 1650,
-        "category": "Decorative Objects",
-        "priority": 4,
-        "url": "https://images.unsplash.com/photo-1647082550285-119acfd169f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxzY3VscHR1cmFsJTIwY2VtZW50JTIwcG90cyUyMHBsYW50ZXIlMjBtb2Rlcm4lMjBsaXZpbmclMjByb29tJTIwZGF5bGlnaHR8ZW58MHx8fHwxNzkxOTEwMzA4fDA&ixlib=rb-4.1.0&q=85",
-        "dimensions": "D: 10\" x H: 5\"",
-        "finish": "Brushed Solid Brass & Marble Base",
-        "availability": "In Stock",
-        "colors": ["Warm Antique Brass", "Polished Steel"]
+        "id": "decor-01",
+        "suggested_name": "Aura Sculptural Candle Holder",
+        "main_url": "https://images.unsplash.com/photo-1607713328148-0e55aa0c0772?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxjYW5kbGUlMjBob2xkZXIlMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzkxOTE0OTgyfDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "id": "decor-02",
+        "suggested_name": "Zari Beaded Decorative Tray",
+        "main_url": "https://images.unsplash.com/photo-1746334181450-0c24379d2a13?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHwzfHxkZWNvcmF0aXZlJTIwdHJheSUyMGRlY29yfGVufDB8fHx8MTc5MTkxNDk4N3ww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "id": "decor-03",
+        "suggested_name": "Ananya Ceramic Bird Sculpture",
+        "main_url": "https://images.unsplash.com/photo-1640246944367-89e6a3eeab74?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwc2N1bHB0dXJlJTIwZGVjb3J8ZW58MHx8fHwxNzkxOTE0OTgyfDA&ixlib=rb-4.1.0&q=85"
       }
-    ],
-    "our_story_artisan": "https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxwb3R0ZXJ5JTIwY2VyYW1pYyUyMGFydGlzYW4lMjBjcmFmdCUyMHN0dWRpbyUyMGhhbmRzJTIwdGV4dHVyZXxlbnwwfHx8fDE3OTE5MTAzMTV8MA&ixlib=rb-4.1.0&q=85",
-    "shop_by_room": {
-      "living_room": "https://images.unsplash.com/photo-1791730096235-38816ac9fa0d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxzY3VscHR1cmFsJTIwY2VtZW50JTIwcG90cyUyMHBsYW50ZXIlMjBtb2Rlcm4lMjBsaXZpbmclMjByb29tJTIwZGF5bGlnaHR8ZW58MHx8fHwxNzkxOTEwMzA4fDA&ixlib=rb-4.1.0&q=85",
-      "balcony": "https://images.unsplash.com/photo-1772656674442-a37d93baae3f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxiYWxjb255JTIwaW5kb29yJTIwcGxhbnRzJTIwc3VubGlnaHR8ZW58MHx8fHwxNzgyMzgzMzgyfDA&ixlib=rb-4.1.0&q=85",
-      "entryway": "https://images.unsplash.com/photo-1761330439316-72229b71798f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxzY3VscHR1cmFsJTIwY2VtZW50JTIwcG90cyUyMHBsYW50ZXIlMjBtb2Rlcm4lMjBsaXZpbmclMjByb29tJTIwZGF5bGlnaHR8ZW58MHx8fHwxNzkxOTEwMzA4fDA&ixlib=rb-4.1.0&q=85",
-      "workspace": "https://images.unsplash.com/photo-1789916978489-79af03f06298?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHxjZXJhbWljJTIwZGVjb3JhdGl2ZSUyMHZhc2VzJTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzkxOTEwMzA3fDA&ixlib=rb-4.1.0&q=85"
-    }
+    ]
   },
-  "sections_breakdown": [
-    {
-      "step": 1,
-      "name": "Hero Section",
-      "description": "Full-bleed editorial container with daylight photography, kinetic line reveal headline 'Elevate Your Space, Naturally.', supporting subheadline, Primary CTA 'Shop Pots & Planters', Secondary CTA 'Explore Vases', quick stats bar (Handcrafted Cement | All India Express Delivery | 100% Eco-conscious).",
-      "data_test_ids": ["hero-section", "hero-headline", "hero-cta-pots", "hero-cta-vases"]
-    },
-    {
-      "step": 2,
-      "name": "Shop Pots & Planters (Priority 1)",
-      "description": "Grid of cement & textured planters with price in ₹, dimensions, finish badge, WhatsApp direct buy button (+91 7061712908), and Quick-View Modal trigger.",
-      "data_test_ids": ["pots-section", "pots-grid", "pot-card-item", "pot-quick-view-btn", "pot-whatsapp-order-btn"]
-    },
-    {
-      "step": 3,
-      "name": "Discover Our Vases (Priority 2)",
-      "description": "Curated highlight showcase for sculptural ceramics, ribbed vases, and textured vessels with material tags, height specs, and WhatsApp enquiry.",
-      "data_test_ids": ["vases-section", "vases-grid", "vase-card-item", "vase-whatsapp-order-btn"]
-    },
-    {
-      "step": 4,
-      "name": "Featured Pots & Vases Spotlight",
-      "description": "Interactive comparison/spotlight carousel of bestselling cement pots and statement vases side-by-side with living room styling suggestions.",
-      "data_test_ids": ["featured-section", "featured-carousel", "featured-card"]
-    },
-    {
-      "step": 5,
-      "name": "Best Styling Ideas",
-      "description": "Lifestyle vignettes with interactive hotspots (Click on hotspot to view product detail & order on WhatsApp). E.g. 'Corner Plant Layering', 'Console Table Vases', 'Monstera Cement Pillar'.",
-      "data_test_ids": ["styling-ideas-section", "styling-hotspot", "styling-tip-card"]
-    },
-    {
-      "step": 6,
-      "name": "Wall Art & Handmade Paintings (Priority 3)",
-      "description": "Editorial gallery of textured canvas art and modern paintings that complement cement and clay decor.",
-      "data_test_ids": ["wall-art-section", "wall-art-grid", "art-card-item"]
-    },
-    {
-      "step": 7,
-      "name": "Decorative Objects & Table Decor (Priority 4)",
-      "description": "Selected handcrafted tabletop accents, marble trays, brass bowls, and decorative candle holders.",
-      "data_test_ids": ["decor-objects-section", "decor-grid", "decor-card-item"]
-    },
-    {
-      "step": 8,
-      "name": "Shop by Room / Interior Inspiration",
-      "description": "Filterable room inspiration cards: Living Room, Balcony Sanctuary, Entryway, and Creative Workspace.",
-      "data_test_ids": ["shop-by-room-section", "room-tab-living", "room-tab-balcony", "room-tab-entryway", "room-tab-workspace"]
-    },
-    {
-      "step": 9,
-      "name": "Our Story",
-      "description": "Artisan narrative on sustainable raw cement, natural pigments, hand-turning techniques, and zero-plastic eco packaging.",
-      "data_test_ids": ["our-story-section", "story-read-more-btn"]
-    },
-    {
-      "step": 10,
-      "name": "Reviews, FAQs & Footer",
-      "description": "Customer testimonials with star ratings, expandable accordion FAQs for shipping, care instructions, and custom sizes + quick enquiry form modal + sticky WhatsApp floating button.",
-      "data_test_ids": ["reviews-section", "faqs-accordion", "enquiry-form-submit-btn", "sticky-whatsapp-float", "footer-container"]
-    }
-  ],
-  "whatsapp_integration_spec": {
-    "target_number": "+91 7061712908",
-    "url_format": "https://wa.me/917061712908?text={ENCODED_MESSAGE}",
-    "message_templates": {
-      "product_order": "Hello Avora Homes! I would like to order the *{PRODUCT_NAME}* (Price: ₹{PRICE}, Finish: {FINISH}). Please share payment & delivery details.",
-      "product_enquiry": "Hi Avora Homes, I have a question about *{PRODUCT_NAME}* (Price: ₹{PRICE}). Could you share custom size / care options?",
-      "general_enquiry": "Hello Avora Homes, I would like to enquire about your sculptural cement pots and designer vases collection."
-    }
-  },
-  "instructions_to_main_agent": [
-    "Ensure the design direction strictly follows the Organic & Earthy archetype with Cormorant Garamond / Playfair Display headings and warm sandstone background #FBF8F5.",
-    "Implement line-by-line kinetic entrance reveal for the main hero headline 'Elevate Your Space, Naturally.' using Framer Motion.",
-    "Place clear prices in ₹ (INR), dimensions, finish, and stock availability on EVERY product card.",
-    "Add 'Order on WhatsApp' (green button with WhatsApp icon) and 'Ask a Question' (outline button) to every product card and Quick View modal.",
-    "Construct the Quick View Modal using custom Framer Motion overlay or Shadcn Dialog, showing dimensions, finish, available color swatches, care instructions, and direct WhatsApp order button.",
-    "Build the Simple Enquiry Form with fields: Name, Phone Number, City, Product Interest, and Message.",
-    "Ensure every interactive element has a clear data-testid attribute in kebab-case.",
-    "Create a sticky glassmorphism header with Avora Homes custom SVG logo, navigation anchors, search/filter, and WhatsApp direct contact.",
-    "Include a floating WhatsApp button at the bottom-right of the screen for instant customer support."
-  ],
-  "UNIVERSAL GUIDELINES FOR MAIN AGENT": {
-    "data_testid_requirement": "All interactive and key informational elements MUST include a data-testid attribute for stable testing.",
-    "contrast_rules": "Ensure minimum 4.5:1 contrast ratio. Never rely on default transparent background on sticky header or dropdowns; backdrop-blur with warm background opacity is mandatory.",
-    "mobile_first": "Ensure responsive layout for all grid sections (1 col on mobile, 2 col on tablet, 3-4 col on desktop).",
-    "animations": "Use smooth Framer Motion transitions with reduced motion checks."
-  }
+  "instructions_to_main_agent": "Use the JSON under 'catalogue_expansion' to populate expanded product listings, detail views, and multi-angle photo galleries for Avora Homes storefront.",
+  "GENERAL UI UX DESIGN GUIDELINES": "All interactive and key informational elements MUST include a data-testid attribute to facilitate robust automated testing."
 }

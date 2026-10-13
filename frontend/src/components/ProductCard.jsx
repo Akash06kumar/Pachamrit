@@ -11,13 +11,13 @@ import { formatINR, waOrderLink, waQuestionLink } from "@/lib/whatsapp";
 
 const swatch = (color) => {
   const c = color.toLowerCase();
-  if (c.includes("black") || c.includes("obsidian") || c.includes("charcoal"))
+  if (c.includes("black") || c.includes("obsidian") || c.includes("charcoal") || c.includes("onyx") || c.includes("nero") || c.includes("midnight"))
     return "#26221f";
-  if (c.includes("white") || c.includes("ivory") || c.includes("bone") || c.includes("chalk") || c.includes("cream"))
+  if (c.includes("white") || c.includes("ivory") || c.includes("bone") || c.includes("chalk") || c.includes("cream") || c.includes("carrara"))
     return "#f2ede4";
-  if (c.includes("terracotta") || c.includes("ochre")) return "#c06b41";
+  if (c.includes("terracotta") || c.includes("ochre") || c.includes("ember")) return "#c06b41";
   if (c.includes("olive") || c.includes("sage")) return "#7a8471";
-  if (c.includes("blue") || c.includes("indigo") || c.includes("mist"))
+  if (c.includes("blue") || c.includes("indigo") || c.includes("mist") || c.includes("sapphire"))
     return "#8fa3b8";
   if (c.includes("grey") || c.includes("gray") || c.includes("slate") || c.includes("fog"))
     return "#9a958c";
@@ -25,19 +25,26 @@ const swatch = (color) => {
   if (c.includes("clay") || c.includes("taupe")) return "#a98a72";
   if (c.includes("steel")) return "#aeb4b8";
   if (c.includes("sand")) return "#d9c9ae";
+  if (c.includes("garden") || c.includes("multi")) return "#7a5a8c";
   return "#b8ad9c";
 };
 
 const QuickView = ({ product, open, onClose }) => {
   const [qty, setQty] = useState(1);
+  const [imgIdx, setImgIdx] = useState(0);
+  const close = () => {
+    setQty(1);
+    setImgIdx(0);
+    onClose();
+  };
   return (
-    <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
+    <Dialog open={open} onOpenChange={(v) => !v && close()}>
       <DialogContent
         className="max-w-3xl gap-0 overflow-hidden rounded-3xl border-stone-200 bg-sand p-0"
         data-testid={`${product.id}-quick-view-modal`}
       >
         <button
-          onClick={onClose}
+          onClick={close}
           data-testid={`${product.id}-quick-view-close-btn`}
           className="absolute right-4 top-4 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink/70 text-sand backdrop-blur transition-colors hover:bg-terra"
           aria-label="Close quick view"
@@ -45,16 +52,37 @@ const QuickView = ({ product, open, onClose }) => {
           <X className="h-4 w-4" />
         </button>
         <div className="grid md:grid-cols-2">
-          <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[520px]">
-            <img
-              src={product.url}
-              alt={product.name}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            {product.tag && (
-              <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-sand backdrop-blur">
-                {product.tag}
-              </span>
+          <div className="flex flex-col">
+            <div className="relative aspect-[4/5] md:flex-1">
+              <img
+                src={product.images[imgIdx]}
+                alt={`${product.name} — photo ${imgIdx + 1}`}
+                className="absolute inset-0 h-full w-full object-cover"
+                data-testid={`${product.id}-modal-image`}
+              />
+              {product.tag && (
+                <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-sand backdrop-blur">
+                  {product.tag}
+                </span>
+              )}
+            </div>
+            {product.images.length > 1 && (
+              <div className="flex gap-2.5 bg-cream/60 p-3" data-testid={`${product.id}-modal-thumbnails`}>
+                {product.images.map((src, i) => (
+                  <button
+                    key={src}
+                    type="button"
+                    onClick={() => setImgIdx(i)}
+                    data-testid={`${product.id}-thumb-${i}`}
+                    aria-label={`View photo ${i + 1}`}
+                    className={`relative h-16 w-16 overflow-hidden rounded-xl border-2 transition-colors ${
+                      i === imgIdx ? "border-terra" : "border-transparent opacity-70 hover:opacity-100"
+                    }`}
+                  >
+                    <img src={src} alt="" className="h-full w-full object-cover" />
+                  </button>
+                ))}
+              </div>
             )}
           </div>
           <div className="flex flex-col p-7 sm:p-9">
@@ -187,7 +215,7 @@ export const ProductCard = ({ product, index = 0 }) => {
     >
       <div className="relative aspect-[4/5] overflow-hidden rounded-[22px] bg-cream">
         <img
-          src={product.url}
+          src={product.images[0]}
           alt={product.name}
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
@@ -196,6 +224,11 @@ export const ProductCard = ({ product, index = 0 }) => {
         {product.tag && (
           <span className="absolute left-4 top-4 rounded-full bg-sand/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink backdrop-blur">
             {product.tag}
+          </span>
+        )}
+        {product.images.length > 1 && (
+          <span className="absolute right-4 top-4 rounded-full bg-ink/60 px-2.5 py-1 text-[10px] font-semibold text-sand backdrop-blur">
+            {product.images.length} photos
           </span>
         )}
         <button

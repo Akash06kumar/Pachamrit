@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "@/App.css";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/Navbar";
@@ -14,9 +15,10 @@ import { Reviews } from "@/components/Reviews";
 import { FaqEnquiry } from "@/components/FaqEnquiry";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import AdminPage from "@/pages/AdminPage";
 import { pots, vases, wallArt, decorObjects } from "@/data/products";
 
-function App() {
+const Storefront = () => {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.15,
@@ -48,6 +50,7 @@ function App() {
           title="Shop Pots & Planters"
           copy="Hand-cast cement pots, textured planters and sculptural floor pieces — the heart of Avora Homes."
           products={pots}
+          filterable
         />
         <ProductSection
           id="vases"
@@ -56,6 +59,7 @@ function App() {
           copy="Sculptural ceramics, ribbed vessels and statement amphorae — find your perfect vase."
           products={vases}
           tone="cream"
+          filterable
         />
         <Featured />
         <StylingIdeas />
@@ -72,9 +76,9 @@ function App() {
           id="decor"
           eyebrow="Table Decor"
           title="Decorative Objects"
-          copy="Handcrafted tabletop accents — brass bowls and statement pieces to finish the scene."
+          copy="Handcrafted tabletop accents — brass bowls, candle holders and sculptures to finish the scene."
           products={decorObjects}
-          columns="sm:grid-cols-2 lg:grid-cols-3"
+          columns="sm:grid-cols-2 lg:grid-cols-4"
         />
         <ShopByRoom />
         <OurStory />
@@ -85,6 +89,17 @@ function App() {
       <FloatingWhatsApp />
       <Toaster position="top-center" richColors />
     </div>
+  );
+};
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Storefront />} />
+        <Route path="/admin" element={<AdminPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

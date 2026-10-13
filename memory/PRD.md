@@ -25,26 +25,27 @@ Build a premium landing page / storefront for **Avora Homes**, an Indian home-de
 ## Implemented (October 2026)
 - Kinetic hero: masked line-by-line headline reveal, arch-clipped parallax hero image, floating bestseller card with one-tap WhatsApp order
 - Slow editorial marquee strip; film-grain overlay; Lenis momentum scrolling; original SVG logo mark + favicon
-- Product catalogue: 4 cement pots, 4 vases, 2 wall-art sets, 1 decor object — each with ₹ price, dimensions, finish, availability, colour swatches
+- Expanded catalogue: 11 pots & planters, 14 vases, 2 wall-art sets, 4 decor objects — each with ₹ price, dimensions, finish, availability, colour swatches; many with multi-photo galleries (thumbnail switcher in quick view)
+- The owner's 5 real product photos are live (hosted at /products/*.jpg): Sorrento Marble-Gold Trio, Gilded Vine Tall Vase, Cuzco Tribal Art Vase, Jaipur Blooms Handpainted Vase, Folk Flora Handpainted Planter; Marble Trio + Gilded Vine lead the Featured edit
+- Collection filters on Pots and Vases sections: price buckets, size (Tabletop/Medium/Floor), material (Cement/Ceramic/Terracotta/Marble), colour family — with result counts, reset and empty state
+- Private admin page at /admin (JWT auth, httpOnly cookie, bcrypt hash, seeded admin, brute-force lockout): login → enquiry inbox with name/phone/city/interest/message/date, refresh, logout; direct WhatsApp link per enquiry phone
 - Quick-view modal with quantity stepper feeding the prefilled WhatsApp order message
-- Featured "Cement Edit" spotlight (dark section), Styling Ideas with "Shop this look" WhatsApp links, Shop-by-Room tabs (Living/Balcony/Entryway/Workspace)
-- Our Story with parallax artisan image, Reviews, FAQ accordion, enquiry form (saved to MongoDB, verified end-to-end), footer, floating WhatsApp button
-- Verified: enquiry API via curl; UI flows via Playwright screenshots at 375/768/1366px; WhatsApp links point to +91 7061712908 with product name, price, quantity
+- Featured "Cement Edit" spotlight, Styling Ideas, Shop-by-Room tabs, Our Story, Reviews, FAQ accordion, enquiry form, footer, floating WhatsApp button
+- Verified: auth chain via curl (401 unauth, login, /me, protected list); UI via Playwright (filters, gallery, admin login/logout, enquiry dashboard)
 
 ## Notes / Known Limitations
-- Product photos are curated editorial stock — the 5 photos the user uploaded could not be retrieved from the environment; re-upload to swap them in
+- Remaining stock photos are curated editorial images; new additions (Kavya, Aanya, Soma, Mira, etc.) are MOCKED imagery — swap with real photos as they are shot
 - Prices, dimensions and availability are illustrative placeholders — easy to edit in `src/data/products.js`
-- No admin panel for enquiries yet (readable via `GET /api/enquiries`)
+- Admin credentials: admin@avorahomes.in / Avora@2026 (change ADMIN_PASSWORD in backend/.env; the seed re-syncs the hash on restart)
 
 ## Backlog
-- **P0**: Swap in real product photography; confirm real prices/stock with owner
-- **P1**: Collection filters (price, size, material, colour, style); more SKUs per category
-- **P1**: Admin view of enquiries
-- **P2**: SEO meta/OG/sitemap/JSON-LD (farm-seo-setup skill); blog/styling journal CMS; multi-image product galleries
+- **P0**: Confirm real prices/stock; shoot real photos for the new stock-imagery SKUs
+- **P1**: Admin: mark enquiries as read/replied; delete spam
+- **P2**: SEO meta/OG/sitemap/JSON-LD (farm-seo-setup skill); blog/styling journal CMS
 - **P2**: Razorpay/Stripe online checkout (WhatsApp flow retained as fallback)
 
 ## Next Tasks
-1. Replace stock imagery with owner's real product photos
-2. Add price/size/colour filters to Pots and Vases sections
-3. Build a small admin page listing saved enquiries
-4. Run SEO setup skill before go-live
+1. Replace remaining stock imagery with real photos as they're shot
+2. Add read/replied status to admin enquiry inbox
+3. Run SEO setup skill before go-live
+4. Add more real SKUs as the catalogue grows
