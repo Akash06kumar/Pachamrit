@@ -182,7 +182,7 @@ export default function AdminPage() {
                 Admin Sign In
               </h1>
               <p className="mt-2 text-sm text-stone-600">
-                Private area — enquiry inbox for Avora Homes.
+                Private area — enquiry inbox for PachAmrit.
               </p>
               <div className="mt-6 space-y-4">
                 <Input

@@ -6,10 +6,10 @@ import { SearchDialog } from "./SearchDialog";
 import { waGeneralLink } from "@/lib/whatsapp";
 
 const links = [
-  { label: "Pots & Planters", href: "#pots", testid: "nav-link-pots" },
-  { label: "Vases", href: "#vases", testid: "nav-link-vases" },
-  { label: "Styling", href: "#styling", testid: "nav-link-styling" },
-  { label: "Wall Art", href: "#wall-art", testid: "nav-link-wall-art" },
+  { label: "Packs", href: "#packs", testid: "nav-link-packs" },
+  { label: "Ingredients", href: "#ingredients", testid: "nav-link-ingredients" },
+  { label: "Benefits", href: "#benefits", testid: "nav-link-benefits" },
+  { label: "How to Use", href: "#how-to-use", testid: "nav-link-how-to-use" },
   { label: "Our Story", href: "#story", testid: "nav-link-story" },
   { label: "FAQs", href: "#faqs", testid: "nav-link-faqs" },
 ];

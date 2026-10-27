@@ -1,142 +1,149 @@
 {
-  "brand_identity": {
-    "name": "Avora Homes",
-    "positioning": "Premium Indian home-decor brand specializing in sculptural cement pots, planters, and designer vases",
-    "aesthetic": "Warm sand / terracotta editorial styling",
-    "typography": {
-      "heading": "Cormorant Garamond, serif",
-      "body": "Plus Jakarta Sans, sans-serif"
+  "brand_name": "PachAmrit",
+  "tagline": "Shuddha Swasthya Amrit — Ancient Ayurvedic Digestive Powder",
+  "category": "Ayurvedic Digestive Powder (Churan)",
+  "pachamrit": {
+    "palette": {
+      "deep_herbal_green": "#2A3D2C",
+      "turmeric_amber": "#D9822B",
+      "warm_cream": "#FBF7EF",
+      "black_salt_charcoal": "#1C1917",
+      "antique_brass": "#C89D5C",
+      "clay_terracotta": "#B85334",
+      "soft_sage": "#788B74",
+      "border_sand": "#E6DEC2"
     },
-    "color_palette": {
-      "sand_light": "#F7F4EF",
-      "sand_base": "#EAE3D9",
-      "terracotta": "#C86D51",
-      "earth_dark": "#2C2623",
-      "clay_muted": "#B59A88"
+    "typography": {
+      "headings": {
+        "family": "Cormorant Garamond",
+        "category": "Editorial Serif",
+        "weights": ["500", "600", "700"],
+        "fallback": "Georgia, serif",
+        "hero_size": "text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-[#2A3D2C]"
+      },
+      "body": {
+        "family": "Plus Jakarta Sans",
+        "category": "Clean Humanist Sans",
+        "weights": ["400", "500", "600"],
+        "fallback": "system-ui, sans-serif",
+        "class": "font-sans leading-relaxed text-[#1C1917]"
+      },
+      "accent_label": {
+        "class": "text-xs font-semibold tracking-[0.25em] uppercase text-[#C89D5C]"
+      }
+    },
+    "art_direction": {
+      "mood": "Apothecary-warm, authentic Ayurvedic luxury, earthy & grounded",
+      "anti_patterns": [
+        "No generic flat green gradients",
+        "No clinical white lab look",
+        "No Inter or Space Grotesk fonts",
+        "No placeholder image URLs"
+      ],
+      "texture": "Subtle SVG film grain noise overlay (.grain class with 0.05 opacity), warm paper backgrounds (#FBF7EF), brass foil accents (#C89D5C)",
+      "card_style": "Cardless or subtle 1px border (#E6DEC2) with soft inner shadow and warm cream backdrop",
+      "button_style": "Primary: Deep Herbal Green (#2A3D2C) with hover effect to Amber (#D9822B); WhatsApp CTA: Pure WhatsApp Green (#25D366) with smooth pulse effect"
+    },
+    "image_urls": {
+      "hero": "https://images.unsplash.com/photo-1622042914579-f5d10cf8ea4d?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "hero_alternatives": [
+        "https://images.unsplash.com/photo-1622042914579-f5d10cf8ea4d?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "https://images.unsplash.com/photo-1718018486246-adfaec1bdf03?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "https://images.unsplash.com/photo-1633509817627-5a29634475af?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "https://images.unsplash.com/photo-1615485499958-69973683793c?crop=entropy&cs=srgb&fm=jpg&q=85"
+      ],
+      "pack_alternate": "https://images.unsplash.com/photo-1594813597068-ee1090116784?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "ingredients": [
+        {
+          "name": "Jeera (Cumin Seeds)",
+          "benefit": "Stimulates digestive enzymes & reduces gas",
+          "url": "https://images.unsplash.com/photo-1600791102844-208e695205f6?crop=entropy&cs=srgb&fm=jpg&q=85"
+        },
+        {
+          "name": "Ajwain (Carom Seeds)",
+          "benefit": "Provides fast relief from bloating and abdominal discomfort",
+          "url": "https://images.unsplash.com/photo-1609324160773-7f3cfacc27ac?crop=entropy&cs=srgb&fm=jpg&q=85"
+        },
+        {
+          "name": "Saunf (Fennel Seeds)",
+          "benefit": "Soothes stomach lining and relieves acidity after meals",
+          "url": "https://images.unsplash.com/photo-1518450806633-2bd5a56a5309?crop=entropy&cs=srgb&fm=jpg&q=85"
+        },
+        {
+          "name": "Kala Namak (Black Salt Crystals)",
+          "benefit": "Enhances gut motility and aids nutrient absorption",
+          "url": "https://images.unsplash.com/photo-1587493053604-f943541023aa?crop=entropy&cs=srgb&fm=jpg&q=85"
+        },
+        {
+          "name": "Sonth (Dry Ginger)",
+          "benefit": "Ignites Agni (digestive fire) and prevents heaviness",
+          "url": "https://images.unsplash.com/photo-1616225273962-05c320ca73d2?crop=entropy&cs=srgb&fm=jpg&q=85"
+        },
+        {
+          "name": "Amla & Kali Mirch (Black Pepper)",
+          "benefit": "Rich in Vitamin C and bio-availability enhancers",
+          "url": "https://images.unsplash.com/photo-1737397456400-ef2465e0226f?crop=entropy&cs=srgb&fm=jpg&q=85"
+        }
+      ],
+      "packs": [
+        {
+          "pack": "50g Pack",
+          "price": "₹149",
+          "url": "https://images.unsplash.com/photo-1594813597068-ee1090116784?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "description": "Travel-friendly daily digestive pouch"
+        },
+        {
+          "pack": "100g Pack",
+          "price": "₹269",
+          "url": "https://images.unsplash.com/photo-1603122612817-2fe0e0631a93?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "description": "Family wellness size with traditional brass-toned jar aesthetic"
+        }
+      ],
+      "lifestyle": [
+        "https://images.unsplash.com/photo-1782024014893-87ea478bf96d?crop=entropy&cs=srgb&fm=jpg&q=85"
+      ],
+      "story": "https://images.unsplash.com/photo-1492552085122-36706c238263?crop=entropy&cs=srgb&fm=jpg&q=85"
     }
   },
-  "catalogue_expansion": {
-    "pots_and_planters": [
-      {
-        "id": "pot-01",
-        "suggested_name": "Kavya Ribbed Cement Pot",
-        "main_url": "https://images.unsplash.com/photo-1766392533421-df119fdedafe?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHwzfHxyaWJiZWQlMjBjZXJhbWljJTIwcGxhbnRlcnxlbnwwfHx8fDE3OTE5MTQ5ODN8MA&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1713810958161-48f64ca4c5d6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHw0fHxyaWJiZWQlMjBjZXJhbWljJTIwcGxhbnRlcnxlbnwwfHx8fDE3OTE5MTQ5ODN8MA&ixlib=rb-4.1.0&q=85",
-          "https://images.unsplash.com/photo-1701270631258-ca1a2edbd9c5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHwxfHxyaWJiZWQlMjBjZXJhbWljJTIwcGxhbnRlcnxlbnwwfHx8fDE3OTE5MTQ5ODN8MA&ixlib=rb-4.1.0&q=85"
-        ]
-      },
-      {
-        "id": "pot-02",
-        "suggested_name": "Aanya Hanging Cement Planter",
-        "main_url": "https://images.unsplash.com/photo-1600411832986-5a4477b64a1c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwzfHxoYW5naW5nJTIwcGxhbnRlciUyMGluZG9vcnxlbnwwfHx8fDE3OTE5MTQ5Nzd8MA&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwxfHxoYW5naW5nJTIwcGxhbnRlciUyMGluZG9vcnxlbnwwfHx8fDE3OTE5MTQ5Nzd8MA&ixlib=rb-4.1.0&q=85",
-          "https://images.unsplash.com/photo-1655292913586-515ff5ab9505?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwyfHxoYW5naW5nJTIwcGxhbnRlciUyMGluZG9vcnxlbnwwfHx8fDE3OTE5MTQ5Nzd8MA&ixlib=rb-4.1.0&q=85"
-        ]
-      },
-      {
-        "id": "pot-03",
-        "suggested_name": "Clayton Small Tabletop Pot Set",
-        "main_url": "https://images.unsplash.com/photo-1463320898484-cdee8141c787?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85"
-        ]
-      },
-      {
-        "id": "pot-04",
-        "suggested_name": "Veda Wide Bowl Planter",
-        "main_url": "https://images.unsplash.com/photo-1559810087-893a00a35608?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwzfHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1619578977011-25e9ba052e32?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw0fHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85"
-        ]
-      },
-      {
-        "id": "pot-05",
-        "suggested_name": "TARA Cylindrical Floor Planter",
-        "main_url": "https://images.unsplash.com/photo-1786357906244-2e0309fbe0ab?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxjb25jcmV0ZSUyMGdlb21ldHJpYyUyMHBsYW50ZXJ8ZW58MHx8fHwxNzkxOTE0OTg3fDA&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1784653549138-ce6f99ac4a6c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHx0YWxsJTIwZmxvb3IlMjB2YXNlJTIwbWluaW1hbHxlbnwwfHx8fDE3OTE5MTQ5ODJ8MA&ixlib=rb-4.1.0&q=85"
-        ]
-      },
-      {
-        "id": "pot-06",
-        "suggested_name": "Riya Geometric Faceted Pot",
-        "main_url": "https://images.unsplash.com/photo-1619578977011-25e9ba052e32?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw0fHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1463320898484-cdee8141c787?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxjb25jcmV0ZSUyMHBsYW50ZXIlMjBwb3R8ZW58MHx8fHwxNzkxOTE0OTc3fDA&ixlib=rb-4.1.0&q=85"
-        ]
-      }
-    ],
-    "vases": [
-      {
-        "id": "vase-01",
-        "suggested_name": "Soma Minimal Bud Vase Set",
-        "main_url": "https://images.unsplash.com/photo-1677761640321-b80251be00ca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwYnVkJTIwdmFzZXxlbnwwfHx8fDE3OTE5MTQ5Nzh8MA&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1687191883721-257d8cad5b54?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxjZXJhbWljJTIwYnVkJTIwdmFzZXxlbnwwfHx8fDE3OTE5MTQ5Nzh8MA&ixlib=rb-4.1.0&q=85",
-          "https://images.unsplash.com/photo-1643569556871-91ec60671ed7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwyfHxjZXJhbWljJTIwYnVkJTIwdmFzZXxlbnwwfHx8fDE3OTE5MTQ5Nzh8MA&ixlib=rb-4.1.0&q=85"
-        ]
-      },
-      {
-        "id": "vase-02",
-        "suggested_name": "Mira Tall Sculptural Floor Vase",
-        "main_url": "https://images.unsplash.com/photo-1772442364571-c340bcc2efc0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHx0YWxsJTIwZmxvb3IlMjB2YXNlJTIwbWluaW1hbHxlbnwwfHx8fDE3OTE5MTQ5ODJ8MA&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1772442364499-52f96e8fc4d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHx0YWxsJTIwZmxvb3IlMjB2YXNlJTIwbWluaW1hbHxlbnwwfHx8fDE3OTE5MTQ5ODJ8MA&ixlib=rb-4.1.0&q=85"
-        ]
-      },
-      {
-        "id": "vase-03",
-        "suggested_name": "Kira Textured Statement Vase",
-        "main_url": "https://images.unsplash.com/photo-1613424777445-f93a2a48e285?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHwxfHx0ZXJyYWNvdHRhJTIwdmFzZSUyMGRlY29yfGVufDB8fHx8MTc5MTkxNDk3N3ww&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1631125915510-8ffed5a0d054?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHw0fHx0ZXJyYWNvdHRhJTIwdmFzZSUyMGRlY29yfGVufDB8fHx8MTc5MTkxNDk3N3ww&ixlib=rb-4.1.0&q=85"
-        ]
-      },
-      {
-        "id": "vase-04",
-        "suggested_name": "Earthy Fluted Terracotta Vase",
-        "main_url": "https://images.unsplash.com/photo-1674390521253-79caf82d0ceb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHwyfHx0ZXJyYWNvdHRhJTIwdmFzZSUyMGRlY29yfGVufDB8fHx8MTc5MTkxNDk3N3ww&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1613424777445-f93a2a48e285?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHwxfHx0ZXJyYWNvdHRhJTIwdmFzZSUyMGRlY29yfGVufDB8fHx8MTc5MTkxNDk3N3ww&ixlib=rb-4.1.0&q=85"
-        ]
-      },
-      {
-        "id": "vase-05",
-        "suggested_name": "Nila Ribbed Ceramic Vase",
-        "main_url": "https://images.unsplash.com/photo-1713810958161-48f64ca4c5d6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHw0fHxyaWJiZWQlMjBjZXJhbWljJTIwcGxhbnRlcnxlbnwwfHx8fDE3OTE5MTQ5ODN8MA&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1611909023032-2d6b3134ecba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHwyfHxyaWJiZWQlMjBjZXJhbWljJTIwcGxhbnRlcnxlbnwwfHx8fDE3OTE5MTQ5ODN8MA&ixlib=rb-4.1.0&q=85"
-        ]
-      },
-      {
-        "id": "vase-06",
-        "suggested_name": "Devi Minimal Bottle Vase",
-        "main_url": "https://images.unsplash.com/photo-1633000116322-d7f5cb7d3ebb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwYm90dGxlJTIwdmFzZXxlbnwwfHx8fDE3OTE5MTQ5ODd8MA&ixlib=rb-4.1.0&q=85",
-        "alternate_urls": [
-          "https://images.unsplash.com/photo-1618674622469-d7fd1a22fcf8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwYm90dGxlJTIwdmFzZXxlbnwwfHx8fDE3OTE5MTQ5ODd8MA&ixlib=rb-4.1.0&q=85"
-        ]
-      }
-    ],
-    "decor_objects": [
-      {
-        "id": "decor-01",
-        "suggested_name": "Aura Sculptural Candle Holder",
-        "main_url": "https://images.unsplash.com/photo-1607713328148-0e55aa0c0772?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxjYW5kbGUlMjBob2xkZXIlMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzkxOTE0OTgyfDA&ixlib=rb-4.1.0&q=85"
-      },
-      {
-        "id": "decor-02",
-        "suggested_name": "Zari Beaded Decorative Tray",
-        "main_url": "https://images.unsplash.com/photo-1746334181450-0c24379d2a13?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHwzfHxkZWNvcmF0aXZlJTIwdHJheSUyMGRlY29yfGVufDB8fHx8MTc5MTkxNDk4N3ww&ixlib=rb-4.1.0&q=85"
-      },
-      {
-        "id": "decor-03",
-        "suggested_name": "Ananya Ceramic Bird Sculpture",
-        "main_url": "https://images.unsplash.com/photo-1640246944367-89e6a3eeab74?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwc2N1bHB0dXJlJTIwZGVjb3J8ZW58MHx8fHwxNzkxOTE0OTgyfDA&ixlib=rb-4.1.0&q=85"
-      }
-    ]
+  "colors": {
+    "background": "#FBF7EF",
+    "surface": "#FFFFFF",
+    "primary": "#2A3D2C",
+    "secondary": "#D9822B",
+    "accent": "#C89D5C",
+    "whatsapp": "#25D366",
+    "border": "#E6DEC2",
+    "text_dark": "#1C1917",
+    "text_muted": "#5C564E"
   },
-  "instructions_to_main_agent": "Use the JSON under 'catalogue_expansion' to populate expanded product listings, detail views, and multi-angle photo galleries for Avora Homes storefront.",
-  "GENERAL UI UX DESIGN GUIDELINES": "All interactive and key informational elements MUST include a data-testid attribute to facilitate robust automated testing."
+  "typography": {
+    "h1": "text-4xl sm:text-5xl lg:text-6xl font-serif text-[#2A3D2C] tracking-tight",
+    "h2": "text-2xl sm:text-3xl lg:text-4xl font-serif text-[#2A3D2C] tracking-tight",
+    "h3": "text-xl sm:text-2xl font-serif text-[#2A3D2C]",
+    "body": "text-base font-sans leading-relaxed text-[#1C1917]",
+    "label": "text-xs font-semibold uppercase tracking-[0.2em] text-[#C89D5C]"
+  },
+  "visual_enhancers": {
+    "grain_overlay": true,
+    "marquee": true,
+    "glassmorphism_nav": "backdrop-blur-md bg-[#FBF7EF]/90 border-b border-[#E6DEC2] z-50",
+    "card_radius": "rounded-2xl"
+  },
+  "grids": {
+    "bento_mode_a": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 lg:gap-8",
+    "products_grid": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto",
+    "ingredients_grid": "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+  },
+  "motion": {
+    "hover_lift": "transition-transform duration-300 hover:-translate-y-1 hover:shadow-md",
+    "button_press": "active:scale-95 transition-transform",
+    "marquee_animation": "marquee-track"
+  },
+  "whatsapp_integration": {
+    "phone_number": "+91 7061712908",
+    "prefilled_message_50g": "Namaste PachAmrit! I would like to order the 50g PachAmrit Digestive Churan Pack (₹149). Please confirm details.",
+    "prefilled_message_100g": "Namaste PachAmrit! I would like to order the 100g PachAmrit Digestive Churan Pack (₹269). Please confirm details."
+  },
+  "instructions_to_main_agent": "Ensure every button, input, product card, quick view modal, filter, enquiry form, and nav element includes data-testid attribute in kebab-case. Use WhatsApp direct integration links with prefilled messages to +91 7061712908. Maintain high contrast readability for all text against warm cream background.",
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": "Follow APCA/WCAG AA contrast standards. Use Cormorant Garamond for headings and Plus Jakarta Sans for body text. All interactive elements must have data-testid attributes."
 }

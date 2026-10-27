@@ -5,52 +5,52 @@
 body {
     margin: 0;
     font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-    background-color: #FBF8F5;
+    background-color: #FBF7EF;
     color: #1C1917;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-    background: #C85A32;
-    color: #FBF8F5;
+    background: #D9822B;
+    color: #FBF7EF;
 }
 
 ::-webkit-scrollbar {
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #F3EDE6;
+    background: #F3EBD9;
 }
 ::-webkit-scrollbar-thumb {
-    background: #C9BCA9;
+    background: #C9BC9E;
     border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #C85A32;
+    background: #D9822B;
 }
 
 @layer base {
     :root {
-        --background: 30 33% 97%;
+        --background: 40 47% 96%;
         --foreground: 20 6% 9%;
         --card: 0 0% 100%;
         --card-foreground: 20 6% 9%;
         --popover: 0 0% 100%;
         --popover-foreground: 20 6% 9%;
-        --primary: 17 60% 49%;
-        --primary-foreground: 30 33% 97%;
-        --secondary: 33 30% 93%;
+        --primary: 33 71% 51%;
+        --primary-foreground: 40 47% 96%;
+        --secondary: 41 45% 90%;
         --secondary-foreground: 20 6% 9%;
-        --muted: 33 30% 93%;
-        --muted-foreground: 25 5% 32%;
-        --accent: 33 30% 93%;
+        --muted: 41 45% 90%;
+        --muted-foreground: 30 6% 32%;
+        --accent: 41 45% 90%;
         --accent-foreground: 20 6% 9%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 30 12% 88%;
-        --input: 30 12% 85%;
-        --ring: 17 60% 49%;
+        --border: 46 42% 86%;
+        --input: 46 42% 83%;
+        --ring: 33 71% 51%;
         --radius: 0.75rem;
     }
 }

@@ -3,30 +3,30 @@ import { Logo } from "./Logo";
 import { waGeneralLink } from "@/lib/whatsapp";
 
 const shopLinks = [
-  { label: "Pots & Planters", href: "#pots" },
-  { label: "Designer Vases", href: "#vases" },
-  { label: "Wall Art & Paintings", href: "#wall-art" },
-  { label: "Decorative Objects", href: "#decor" },
+  { label: "Churan Packs", href: "#packs" },
+  { label: "Ingredients", href: "#ingredients" },
+  { label: "Benefits", href: "#benefits" },
+  { label: "How to Use", href: "#how-to-use" },
 ];
 
 const exploreLinks = [
-  { label: "Styling Ideas", href: "#styling" },
-  { label: "Shop by Room", href: "#rooms" },
   { label: "Our Story", href: "#story" },
+  { label: "Reviews", href: "#reviews" },
   { label: "FAQs", href: "#faqs" },
+  { label: "Enquire", href: "#faqs" },
 ];
 
 export const Footer = () => (
   <footer
     data-testid="footer-container"
-    className="bg-ink pb-10 pt-16 text-sand sm:pt-20"
+    className="bg-olive pb-10 pt-16 text-sand sm:pt-20"
   >
     <div className="mx-auto max-w-7xl px-5 sm:px-8">
       <div className="grid grid-cols-1 gap-12 border-b border-sand/10 pb-12 md:grid-cols-12">
         <div className="md:col-span-5">
           <Logo dark />
           <p className="mt-5 max-w-sm font-serif text-2xl italic leading-snug text-sand/85">
-            Sculptural Pots. Beautiful Vases. Thoughtful Living.
+            Ancient recipe. Modern gut. Everyday relief.
           </p>
           <a
             href={waGeneralLink()}
@@ -45,7 +45,7 @@ export const Footer = () => (
           </h4>
           <ul className="mt-4 space-y-2.5">
             {shopLinks.map((l) => (
-              <li key={l.href}>
+              <li key={l.href + l.label}>
                 <a
                   href={l.href}
                   className="text-sm text-sand/75 transition-colors hover:text-terra"
@@ -62,7 +62,7 @@ export const Footer = () => (
           </h4>
           <ul className="mt-4 space-y-2.5">
             {exploreLinks.map((l) => (
-              <li key={l.href}>
+              <li key={l.href + l.label}>
                 <a
                   href={l.href}
                   className="text-sm text-sand/75 transition-colors hover:text-terra"
@@ -102,9 +102,9 @@ export const Footer = () => (
         </div>
       </div>
       <div className="flex flex-col items-center justify-between gap-3 pt-8 text-xs text-sand/45 sm:flex-row">
-        <p>© {new Date().getFullYear()} Avora Homes. Handcrafted with care in India.</p>
+        <p>© {new Date().getFullYear()} PachAmrit. Roasted & ground with care in India.</p>
         <p className="flex items-center gap-4">
-          <span>Prices in INR · Shipping & payment confirmed on WhatsApp</span>
+          <span>Prices in INR · Payment & delivery confirmed on WhatsApp</span>
           <a href="/admin" data-testid="footer-admin-link" className="transition-colors hover:text-terra">
             Admin
           </a>

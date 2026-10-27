@@ -17,11 +17,10 @@ import { faqs } from "@/data/products";
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const interests = [
-  "Cement Pots & Planters",
-  "Designer Vases",
-  "Wall Art & Paintings",
-  "Decorative Objects",
-  "Custom / Bulk Order",
+  "50g Pack",
+  "100g Pack",
+  "Gut Reset Combo",
+  "Bulk / Wholesale",
   "General Enquiry",
 ];
 
@@ -67,7 +66,8 @@ const EnquiryForm = () => {
         Ask us anything
       </h3>
       <p className="mt-2 text-sm text-stone-600">
-        Custom sizes, bulk orders, styling help — we reply within a few hours.
+        Bulk orders, wholesale, or a question about the recipe — we reply
+        within a few hours.
       </p>
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Input

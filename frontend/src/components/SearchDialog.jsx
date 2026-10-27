@@ -7,9 +7,9 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { ProductCard, QuickView } from "./ProductCard";
-import { pots, vases, wallArt, decorObjects } from "@/data/products";
+import { packs } from "@/data/products";
 
-const allProducts = [...pots, ...vases, ...wallArt, ...decorObjects];
+const allProducts = packs;
 
 export const SearchDialog = ({ open, onClose }) => {
   const [query, setQuery] = useState("");
@@ -19,7 +19,7 @@ export const SearchDialog = ({ open, onClose }) => {
     const q = query.trim().toLowerCase();
     if (!q) return [];
     return allProducts.filter((p) =>
-      [p.name, p.finish, p.category, p.material, ...(p.colors || [])]
+      [p.name, p.finish, p.category, p.material, p.sizeClass, ...(p.colors || [])]
         .join(" ")
         .toLowerCase()
         .includes(q)
@@ -41,21 +41,21 @@ export const SearchDialog = ({ open, onClose }) => {
     <>
       <Dialog open={open} onOpenChange={(v) => !v && close()}>
         <DialogContent
-          className="flex max-h-[88vh] max-w-5xl flex-col gap-0 overflow-hidden rounded-[26px] border-stone-200 bg-sand p-0"
+          className="flex max-h-[88vh] max-w-5xl flex-col gap-0 overflow-hidden rounded-[26px] border-limewash bg-sand p-0"
           data-testid="search-dialog"
         >
-          <div className="border-b border-stone-200 p-6 sm:p-8">
+          <div className="border-b border-limewash p-6 sm:p-8">
             <DialogDescription className="text-[10px] font-semibold uppercase tracking-[0.24em] text-clay">
-              Search the Collection
+              Search PachAmrit
             </DialogDescription>
             <DialogTitle className="sr-only">Search products</DialogTitle>
-            <div className="mt-3 flex items-center gap-3 rounded-2xl border border-stone-300 bg-white px-5">
+            <div className="mt-3 flex items-center gap-3 rounded-2xl border border-limewash bg-white px-5">
               <Search className="h-5 w-5 shrink-0 text-stone-400" />
               <input
                 autoFocus
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Try “cement”, “terracotta vase”, “gold”…"
+                placeholder="Try “50g”, “combo”, “jar”…"
                 data-testid="search-input"
                 className="h-14 w-full bg-transparent font-serif text-xl text-ink outline-none placeholder:text-stone-400"
               />
@@ -66,11 +66,11 @@ export const SearchDialog = ({ open, onClose }) => {
               <div className="py-14 text-center" data-testid="search-idle-state">
                 <Search className="mx-auto h-8 w-8 text-stone-300" />
                 <p className="mt-4 font-serif text-2xl text-ink">
-                  What are you looking for?
+                  Looking for a pack?
                 </p>
                 <p className="mt-2 text-sm text-stone-500">
-                  Search {allProducts.length} pots, vases, paintings and decor
-                  pieces by name, material or finish.
+                  Search our churan packs by size or name — 50g pouch, 100g jar
+                  or the combo.
                 </p>
               </div>
             ) : results.length === 0 ? (
@@ -80,8 +80,8 @@ export const SearchDialog = ({ open, onClose }) => {
                   Nothing found for “{query.trim()}”.
                 </p>
                 <p className="mt-2 text-sm text-stone-500">
-                  Try a material like “cement” or “terracotta” — or ask us on
-                  WhatsApp, we cast custom pieces.
+                  Try “50g” or “combo” — or ask us on WhatsApp, we're happy to
+                  help you pick.
                 </p>
               </div>
             ) : (

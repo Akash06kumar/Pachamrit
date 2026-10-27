@@ -1,12 +1,12 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Leaf, Hammer, PackageCheck } from "lucide-react";
+import { Leaf, Flame, PackageCheck } from "lucide-react";
 import { storyImage } from "@/data/products";
 
 const stats = [
-  { icon: Hammer, label: "Hand-cast in small batches" },
-  { icon: Leaf, label: "Natural pigments, zero plastic" },
-  { icon: PackageCheck, label: "Impact-safe, all-India delivery" },
+  { icon: Leaf, label: "100% natural, no preservatives" },
+  { icon: Flame, label: "Slow-roasted in small batches" },
+  { icon: PackageCheck, label: "Ships fresh across India" },
 ];
 
 export const OurStory = () => {
@@ -32,19 +32,19 @@ export const OurStory = () => {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="relative lg:col-span-5"
         >
-          <div className="arch-frame overflow-hidden shadow-[0_30px_60px_-25px_rgba(74,58,42,0.4)]">
+          <div className="arch-frame overflow-hidden shadow-[0_30px_60px_-25px_rgba(42,61,44,0.4)]">
             <motion.img
               src={storyImage}
-              alt="Artisan hands shaping raw clay in the Avora Homes studio"
+              alt="Grinding roasted spices with a traditional mortar and pestle"
               style={{ y }}
               loading="lazy"
               className="aspect-[4/5] w-full scale-110 object-cover"
             />
           </div>
           <div className="absolute -bottom-6 -right-2 rounded-2xl bg-terra px-6 py-4 text-sand shadow-xl sm:-right-6">
-            <p className="font-serif text-3xl font-semibold">2019</p>
+            <p className="font-serif text-3xl font-semibold">100%</p>
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sand/80">
-              Est. Studio
+              Natural Recipe
             </p>
           </div>
         </motion.div>
@@ -60,23 +60,22 @@ export const OurStory = () => {
             <span className="h-px w-10 bg-terra" />
             Our Story
           </p>
-          <h2 className="font-serif text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl">
-            Born from earth,{" "}
-            <em className="italic text-terra">finished by hand.</em>
+          <h2 className="font-serif text-3xl font-medium leading-tight tracking-tight text-olive sm:text-4xl lg:text-5xl">
+            From our rasoi,{" "}
+            <em className="italic text-terra">to your table.</em>
           </h2>
           <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-stone-600">
             <p>
-              Avora Homes began in a small workshop with one belief — that the
-              objects holding your plants and flowers should be as considered as
-              the rooms they live in. Every cement pot is hand-cast, cured
-              slowly, and burnished until the surface holds light the way raw
-              earth does.
+              PachAmrit began with a recipe written in a grandmother's hand — the
+              same churan that appeared on the table after every heavy family
+              meal. When friends kept asking for "a little extra to take home",
+              we knew it deserved a jar of its own.
             </p>
             <p>
-              We work with natural pigments, reclaimed stone dust, and
-              zero-plastic packaging, so what arrives at your door is honest —
-              sculptural pots, beautiful vases, and paintings made by people,
-              not production lines.
+              We still make it the slow way: whole spices dry-roasted in small
+              batches, stone-ground for texture, and packed within days so the
+              aroma hits you the moment you open the pack. No sugar, no
+              preservatives, nothing you can't pronounce.
             </p>
           </div>
           <ul className="mt-8 space-y-3.5">
@@ -93,7 +92,7 @@ export const OurStory = () => {
             ))}
           </ul>
           <p className="mt-9 font-serif text-2xl italic text-clay" data-testid="story-tagline">
-            “Sculptural Pots. Beautiful Vases. Thoughtful Living.”
+            “Ancient recipe. Modern gut. Everyday relief.”
           </p>
         </motion.div>
       </div>

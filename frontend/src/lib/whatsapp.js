@@ -7,26 +7,26 @@ const build = (message) =>
 
 export const waOrderLink = (product, qty = 1) =>
   build(
-    `Hello Avora Homes! I would like to order the *${product.name}* (Price: ${inr(
+    `Hello PachAmrit! I would like to order the *${product.name}* (Price: ${inr(
       product.price
-    )}, Finish: ${product.finish}). Quantity: ${qty}. Please share payment & delivery details.`
+    )}, Pack: ${product.dimensions}). Quantity: ${qty}. Please share payment & delivery details.`
   );
 
 export const waQuestionLink = (product) =>
   build(
-    `Hi Avora Homes, I have a question about *${product.name}* (Price: ${inr(
+    `Hi PachAmrit, I have a question about the *${product.name}* (Price: ${inr(
       product.price
-    )}). Could you share custom size / care options?`
+    )}). Could you tell me more?`
   );
 
 export const waGeneralLink = () =>
   build(
-    "Hello Avora Homes, I would like to enquire about your sculptural cement pots and designer vases collection."
+    "Hello PachAmrit! I'd like to know more about your digestive churan packs for bloating and digestion."
   );
 
 export const waLookLink = (lookName) =>
   build(
-    `Hi Avora Homes! I loved the *${lookName}* styling idea on your site. Can you help me recreate this look?`
+    `Hi PachAmrit! I have a question about *${lookName}*. Can you help?`
   );
 
 export const formatINR = inr;

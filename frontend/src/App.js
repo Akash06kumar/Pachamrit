@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lenis from "lenis";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "@/App.css";
@@ -7,16 +7,16 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { ProductSection } from "@/components/ProductSection";
-import { Featured } from "@/components/Featured";
-import { StylingIdeas } from "@/components/StylingIdeas";
-import { ShopByRoom } from "@/components/ShopByRoom";
+import { Ingredients } from "@/components/Ingredients";
+import { Benefits } from "@/components/Benefits";
+import { HowToUse } from "@/components/HowToUse";
 import { OurStory } from "@/components/OurStory";
 import { Reviews } from "@/components/Reviews";
 import { FaqEnquiry } from "@/components/FaqEnquiry";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import AdminPage from "@/pages/AdminPage";
-import { pots, vases, wallArt, decorObjects } from "@/data/products";
+import { packs } from "@/data/products";
 
 const Storefront = () => {
   useEffect(() => {
@@ -45,42 +45,16 @@ const Storefront = () => {
         <Hero />
         <Marquee />
         <ProductSection
-          id="pots"
-          eyebrow="Priority One — Pots & Planters"
-          title="Shop Pots & Planters"
-          copy="Hand-cast cement pots, textured planters and sculptural floor pieces — the heart of Avora Homes."
-          products={pots}
-          filterable
+          id="packs"
+          eyebrow="Shop PachAmrit"
+          title="Choose Your Pack"
+          copy="Start with the 50g trial pouch, stock up on the 100g jar, or grab the combo and save — every order is packed fresh and shipped within 24 hours."
+          products={packs}
+          columns="sm:grid-cols-2 lg:grid-cols-3"
         />
-        <ProductSection
-          id="vases"
-          eyebrow="Discover Our Vases"
-          title="Vases That Hold a Room"
-          copy="Sculptural ceramics, ribbed vessels and statement amphorae — find your perfect vase."
-          products={vases}
-          tone="cream"
-          filterable
-        />
-        <Featured />
-        <StylingIdeas />
-        <ProductSection
-          id="wall-art"
-          eyebrow="Handmade Paintings"
-          title="Wall Art & Paintings"
-          copy="Original textured canvases and framed artwork that complement cement and clay."
-          products={wallArt}
-          tone="cream"
-          columns="sm:grid-cols-2"
-        />
-        <ProductSection
-          id="decor"
-          eyebrow="Table Decor"
-          title="Decorative Objects"
-          copy="Handcrafted tabletop accents — brass bowls, candle holders and sculptures to finish the scene."
-          products={decorObjects}
-          columns="sm:grid-cols-2 lg:grid-cols-4"
-        />
-        <ShopByRoom />
+        <Ingredients />
+        <Benefits />
+        <HowToUse />
         <OurStory />
         <Reviews />
         <FaqEnquiry />

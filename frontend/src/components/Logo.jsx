@@ -1,4 +1,4 @@
-export const LogoMark = ({ className = "w-9 h-9" }) => (
+export const LogoMark = ({ className = "w-10 h-10" }) => (
   <svg
     className={className}
     viewBox="0 0 40 40"
@@ -6,17 +6,15 @@ export const LogoMark = ({ className = "w-9 h-9" }) => (
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >
+    <path d="M8 21h24c0 7.5-5.4 13-12 13S8 28.5 8 21z" fill="#2A3D2C" />
+    <path d="M28.5 5.5L17 18" stroke="#D9822B" strokeWidth="3.6" strokeLinecap="round" />
+    <circle cx="30.5" cy="4.8" r="3.1" fill="#D9822B" />
     <path
-      d="M20 4L34 34H6L20 4Z"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M14 21C14 24.3137 16.6863 27 20 27C23.3137 27 26 24.3137 26 21"
-      stroke="#C85A32"
-      strokeWidth="2.5"
+      d="M13 25.5c2 2.2 4.4 3.3 7 3.3s5-1.1 7-3.3"
+      stroke="#FBF7EF"
+      strokeWidth="1.8"
       strokeLinecap="round"
+      fill="none"
     />
   </svg>
 );
@@ -25,13 +23,21 @@ export const Logo = ({ dark = false }) => (
   <a
     href="#top"
     data-testid="brand-logo-link"
-    className="flex items-center"
-    aria-label="Avora Homes — back to top"
+    className={`flex items-center gap-2.5 ${dark ? "text-sand" : "text-ink"}`}
+    aria-label="PachAmrit — back to top"
   >
-    <img
-      src="/logo.png"
-      alt="Avora Homes — Curated Pots & Vases to Elevate Your Space"
-      className={`h-12 w-auto rounded-xl ${dark ? "shadow-lg" : "shadow-sm"}`}
-    />
+    <LogoMark />
+    <span className="leading-none">
+      <span className="block font-serif text-2xl font-semibold tracking-tight">
+        Pach<span className="text-terra">Amrit</span>
+      </span>
+      <span
+        className={`block text-[10px] uppercase tracking-[0.26em] ${
+          dark ? "text-sand/60" : "text-stone-500"
+        }`}
+      >
+        Ayurvedic Digestive Churan
+      </span>
+    </span>
   </a>
 );

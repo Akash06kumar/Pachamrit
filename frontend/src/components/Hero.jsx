@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowDown, MessageCircle } from "lucide-react";
-import { heroImage, pots } from "@/data/products";
+import { heroImage, packs } from "@/data/products";
 import { formatINR, waOrderLink } from "@/lib/whatsapp";
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -36,7 +36,7 @@ export const Hero = () => {
       className="relative overflow-hidden pt-[76px]"
     >
       <div
-        className="pointer-events-none absolute -right-40 top-24 h-[540px] w-[540px] rounded-full bg-limewash/60 blur-3xl"
+        className="pointer-events-none absolute -right-40 top-24 h-[540px] w-[540px] rounded-full bg-limewash/70 blur-3xl"
         aria-hidden="true"
       />
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 pb-16 pt-12 sm:px-8 lg:grid-cols-12 lg:gap-8 lg:pb-24 lg:pt-20">
@@ -49,17 +49,16 @@ export const Hero = () => {
             data-testid="hero-eyebrow"
           >
             <span className="h-px w-10 bg-terra" />
-            Handcrafted Cement · Clay · Stone
+            Roasted · Stone-Ground · Ayurvedic
           </motion.p>
 
           <h1
             data-testid="hero-headline"
-            className="font-serif text-5xl font-medium leading-[1.04] tracking-tight text-ink sm:text-6xl lg:text-7xl"
+            className="font-serif text-5xl font-medium leading-[1.04] tracking-tight text-olive sm:text-6xl lg:text-7xl"
           >
-            <MaskedLine delay={0.25}>Elevate Your</MaskedLine>
+            <MaskedLine delay={0.25}>A Happier Gut,</MaskedLine>
             <MaskedLine delay={0.4}>
-              Space,{" "}
-              <em className="font-medium italic text-terra">Naturally.</em>
+              the <em className="font-medium italic text-terra">Natural</em> Way.
             </MaskedLine>
           </h1>
 
@@ -70,9 +69,9 @@ export const Hero = () => {
             className="mt-6 max-w-md text-base leading-relaxed text-stone-600 sm:text-lg"
             data-testid="hero-subcopy"
           >
-            Discover sculptural cement pots, contemporary planters, and
-            beautifully designed vases that bring character and calm to every
-            corner of your home.
+            PachAmrit is a traditional digestive churan of slow-roasted jeera,
+            ajwain, saunf, sonth and black salt — daily, delicious relief from
+            bloating, gas and that heavy after-meal feeling.
           </motion.p>
 
           <motion.div
@@ -82,19 +81,19 @@ export const Hero = () => {
             className="mt-9 flex flex-wrap items-center gap-4"
           >
             <a
-              href="#pots"
-              data-testid="hero-cta-pots"
-              className="group inline-flex items-center gap-2.5 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-sand transition-colors duration-300 hover:bg-terra"
+              href="#packs"
+              data-testid="hero-cta-packs"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-olive px-7 py-4 text-sm font-semibold text-sand transition-colors duration-300 hover:bg-terra"
             >
-              Shop Pots & Planters
+              Shop Churan Packs
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
-              href="#vases"
-              data-testid="hero-cta-vases"
-              className="inline-flex items-center gap-2.5 rounded-full border border-ink/25 px-7 py-4 text-sm font-semibold text-ink transition-colors duration-300 hover:border-terra hover:text-terra"
+              href="#ingredients"
+              data-testid="hero-cta-ingredients"
+              className="inline-flex items-center gap-2.5 rounded-full border border-olive/30 px-7 py-4 text-sm font-semibold text-olive transition-colors duration-300 hover:border-terra hover:text-terra"
             >
-              Explore Vases
+              See What's Inside
             </a>
           </motion.div>
 
@@ -105,11 +104,11 @@ export const Hero = () => {
             className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-500"
             data-testid="hero-stats"
           >
-            <span>Handcrafted in India</span>
+            <span>100% Natural</span>
             <span className="hidden h-1 w-1 rounded-full bg-terra sm:block" />
-            <span>All-India Delivery</span>
+            <span>No Added Sugar</span>
             <span className="hidden h-1 w-1 rounded-full bg-terra sm:block" />
-            <span>Zero-Plastic Packaging</span>
+            <span>Small-Batch Roasted</span>
           </motion.div>
         </div>
 
@@ -118,17 +117,17 @@ export const Hero = () => {
             initial={{ clipPath: "inset(100% 0 0 0)" }}
             animate={{ clipPath: "inset(0% 0 0 0)" }}
             transition={{ duration: 1.2, delay: 0.35, ease: EASE }}
-            className="arch-frame relative mx-auto aspect-[4/5] max-w-[520px] overflow-hidden shadow-[0_40px_80px_-30px_rgba(74,58,42,0.45)]"
+            className="arch-frame relative mx-auto aspect-[4/5] max-w-[520px] overflow-hidden shadow-[0_40px_80px_-30px_rgba(42,61,44,0.45)]"
           >
             <motion.img
               src={heroImage}
-              alt="Sorrento marble and gold designer vases styled with roses and pampas grass"
+              alt="PachAmrit digestive churan — roasted spices and powder in brass and wooden bowls"
               style={{ y: imgY }}
               className="h-[112%] w-full scale-105 object-cover"
               data-testid="hero-image"
               loading="eager"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-olive/30 via-transparent to-transparent" />
           </motion.div>
 
           <motion.div
@@ -140,8 +139,8 @@ export const Hero = () => {
             data-testid="hero-featured-card"
           >
             <img
-              src={pots[0].images[0]}
-              alt={pots[0].name}
+              src={packs[1].images[0]}
+              alt={packs[1].name}
               className="h-14 w-14 rounded-xl object-cover"
               loading="lazy"
             />
@@ -150,18 +149,18 @@ export const Hero = () => {
                 Bestseller
               </p>
               <p className="font-serif text-base font-semibold text-ink">
-                {pots[0].name}
+                {packs[1].name}
               </p>
               <p className="text-sm font-semibold text-terra">
-                {formatINR(pots[0].price)}
+                {formatINR(packs[1].price)}
               </p>
             </div>
             <a
-              href={waOrderLink(pots[0], 1)}
+              href={waOrderLink(packs[1], 1)}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="hero-featured-order-btn"
-              aria-label={`Order ${pots[0].name} on WhatsApp`}
+              aria-label={`Order ${packs[1].name} on WhatsApp`}
               className="ml-2 inline-flex h-11 w-11 items-center justify-center rounded-full bg-wa text-white transition-colors duration-300 hover:bg-wahover"
             >
               <MessageCircle className="h-5 w-5" />

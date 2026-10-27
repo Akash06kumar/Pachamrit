@@ -1,53 +1,38 @@
-# Avora Homes — PRD
+# PachAmrit — PRD
 
-## Original Problem Statement
-Build a premium landing page / storefront for **Avora Homes**, an Indian home-decor brand where **cement pots, decorative planters and designer vases are the hero products**. Priorities: P1 Pots & Planters, P2 Vases, P3 Wall Art & Paintings, P4 Other Decor. Headline "Elevate Your Space, Naturally." Tagline: "Sculptural Pots. Beautiful Vases. Thoughtful Living." Ordering happens via WhatsApp (+91 7061712908) with prefilled product/price/quantity messages; plus a simple enquiry form.
+## Current Product
+**PachAmrit** — a premium Ayurvedic digestive churan brand (rebranded from the earlier Avora Homes decor storefront at the owner's request). Sells churan for digestion & bloating relief in 50g and 100g packs. Ordering via WhatsApp (+91 7061712908) with prefilled messages; enquiry form + private admin inbox.
 
 ## Architecture
-- **Frontend**: React (CRA/craco) + Tailwind + Framer Motion + Lenis smooth scroll, single-page storefront at `/`
-- **Backend**: FastAPI at `/api` — `POST /api/enquiries`, `GET /api/enquiries`
-- **DB**: MongoDB (`enquiries` collection, uuid string ids)
-- **Catalogue**: static product data (`src/data/products.js`) with curated editorial imagery
-- **Ordering**: `wa.me/917061712908` deep links with prefilled messages (`src/lib/whatsapp.js`)
+- **Frontend**: React (CRA/craco) + Tailwind + Framer Motion + Lenis; single-page storefront at `/`, admin at `/admin`
+- **Backend**: FastAPI `/api` — public `POST /api/enquiries`; JWT auth (`/api/auth/login|logout|me`); protected `GET /api/admin/enquiries`, `PATCH /api/admin/enquiries/{id}/status`
+- **DB**: MongoDB (`enquiries`, `users`, `login_attempts`)
+- **Catalogue**: static (`src/data/products.js`) — 3 packs (50g ₹149 / 100g ₹269 / Combo ₹379), 6 ingredients with benefits, reviews, FAQs
+- **Theme**: apothecary-warm Ayurvedic — deep herbal green #2A3D2C, turmeric amber #D9822B, warm cream #FBF7EF, terracotta #B85334, brass #C89D5C; Cormorant Garamond + Plus Jakarta Sans
+- **Logo**: original SVG mortar-&-pestle mark (green bowl, amber pestle) + "PachAmrit" wordmark; same mark as favicon
 
-## User Personas
-- Design-conscious Indian homeowner styling a living room / balcony
-- Interior designer sourcing statement planters & vases
-- Gift buyer looking for premium handcrafted decor
-
-## Core Requirements (static)
-1. Pots & vases hero-first homepage, editorial warm-neutral art direction
-2. Every product: photo, name, price (₹), dimensions, finish, availability, colours
-3. "Order on WhatsApp" + "Ask a Question" per product; prefilled WhatsApp message
-4. Enquiry form (name, phone, city, interest, message) saved to backend
-5. Homepage section order: Hero → Pots → Vases → Featured → Styling Ideas → Wall Art → Decor → Shop by Room → Our Story → Reviews/FAQs/Footer
+## Homepage Sections
+Hero (kinetic reveal "A Happier Gut, the Natural Way") → Marquee → Shop Packs → Ingredients (6 cards w/ benefits) → Benefits (dark green, 4 cards) → How to Use (3 steps + lifestyle arch image) → Our Story → Reviews → FAQs & Enquiry → Footer. Search dialog (navbar), floating WhatsApp button, per-pack Order/Ask WhatsApp buttons, quick-view modal with qty stepper.
 
 ## Implemented (October 2026)
-- Kinetic hero: masked line-by-line headline reveal, arch-clipped parallax hero image, floating bestseller card with one-tap WhatsApp order
-- Slow editorial marquee strip; film-grain overlay; Lenis momentum scrolling; original SVG logo mark + favicon
-- Expanded catalogue: 11 pots & planters, 14 vases, 2 wall-art sets, 4 decor objects — each with ₹ price, dimensions, finish, availability, colour swatches; many with multi-photo galleries (thumbnail switcher in quick view)
-- The owner's 5 real product photos are live (hosted at /products/*.jpg): Sorrento Marble-Gold Trio, Gilded Vine Tall Vase, Cuzco Tribal Art Vase, Jaipur Blooms Handpainted Vase, Folk Flora Handpainted Planter; Marble Trio + Gilded Vine lead the Featured edit
-- Collection filters on Pots and Vases sections: price buckets, size (Tabletop/Medium/Floor), material (Cement/Ceramic/Terracotta/Marble), colour family — with result counts, reset and empty state
-- Private admin page at /admin (JWT auth, httpOnly cookie, bcrypt hash, seeded admin, brute-force lockout): login → enquiry inbox with name/phone/city/interest/message/date, refresh, logout; direct WhatsApp link per enquiry phone
-- Enquiry status workflow: every enquiry carries New / Read / Replied; admin can mark read or replied (PATCH /api/admin/enquiries/{id}/status), filter tabs with live counts (All/New/Read/Replied), replied state persists
-- Product search: navbar magnifier opens a full-screen search dialog matching all 31 products by name, material, finish and colour; results are full product cards (order/ask/quick-view all work; quick view opens standalone after the search dialog closes to avoid nested-dialog issues)
-- Quick-view modal with quantity stepper feeding the prefilled WhatsApp order message
-- Featured "Cement Edit" spotlight, Styling Ideas, Shop-by-Room tabs, Our Story, Reviews, FAQ accordion, enquiry form, footer, floating WhatsApp button
-- Verified: auth chain via curl (401 unauth, login, /me, protected list); UI via Playwright (filters, gallery, admin login/logout, enquiry dashboard)
+- Full rebrand to PachAmrit: palette, typography accents, logo + favicon, all copy
+- Churan catalogue: 50g/100g/combo packs with price, servings, availability; ingredients showcase; benefits; how-to-use; story; churan reviews & FAQs
+- WhatsApp checkout prefilled with pack, price, quantity to +91 7061712908
+- Enquiry form (interest options: 50g/100g/Combo/Bulk/General) → MongoDB → admin inbox with New/Read/Replied workflow
+- Verified previously: auth chain, enquiry flow, search, status PATCH — re-verified for rebrand in preview
 
 ## Notes / Known Limitations
-- Remaining stock photos are curated editorial images; new additions (Kavya, Aanya, Soma, Mira, etc.) are MOCKED imagery — swap with real photos as they are shot
-- Prices, dimensions and availability are illustrative placeholders — easy to edit in `src/data/products.js`
-- Admin credentials: admin@avorahomes.in / Avora@2026 (change ADMIN_PASSWORD in backend/.env; the seed re-syncs the hash on restart)
+- Pack/ingredient photos are MOCKED curated stock (spice photography) — owner to supply real pack shots + real logo; the earlier uploaded logo art was for Avora Homes
+- Prices ₹149/₹269/₹379 are placeholders — confirm with owner
+- Old Avora product images remain in /public/products (unused, harmless)
 
 ## Backlog
-- **P0**: Confirm real prices/stock; shoot real photos for the new stock-imagery SKUs
-- **P1**: Admin: mark enquiries as read/replied; delete spam
-- **P2**: SEO meta/OG/sitemap/JSON-LD (farm-seo-setup skill); blog/styling journal CMS
-- **P2**: Razorpay/Stripe online checkout (WhatsApp flow retained as fallback)
+- **P0**: Real pack photography + real PachAmrit logo file; confirm prices & FSSAI/licence footer details
+- **P1**: Nutritional info / ingredients-weight table per pack; subscription (monthly refill) offer
+- **P2**: SEO setup (farm-seo-setup skill); Razorpay checkout; delivery pincode checker
 
 ## Next Tasks
-1. Replace remaining stock imagery with real photos as they're shot
-2. Add delete/spam control to the admin enquiry inbox
+1. Swap in real pack photos and logo when the owner uploads them
+2. Confirm final prices, serving counts, shelf life and any licence/legal footer lines
 3. Run SEO setup skill before go-live
-4. Add more real SKUs as the catalogue grows
+4. Add subscription/bundle offers if the owner wants recurring orders
